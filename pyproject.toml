@@ -5,7 +5,7 @@ description = "Random item generator for D&D"
 authors = ["evilchili <evilchili@gmail.com>"]
 license = "The Unlicense"
 packages = [
-    { include = 'item' },
+    { include = 'dnd_item' },
 ]
 
 [tool.poetry.dependencies]
@@ -43,5 +43,5 @@ remove-duplicate-keys = true         # remove all duplicate keys in objects
 remove-unused-variables = true       # remove unused variables
 
 [tool.poetry.scripts]
-fanlang = "item.cli:app"
+fanitem = "dnd_item.cli:app"
 
