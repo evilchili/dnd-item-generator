@@ -1,0 +1,435 @@
+metadata:
+  headers:
+  - Rarity
+  - Name
+  - Category
+  - Type
+  - Weight
+  - Damage Type
+  - Damage Dice
+  - Range
+  - Reload
+  - Value
+  - Properties
+Common:
+- Battleaxe:
+  - martial
+  - Martial
+  - '4'
+  - Slashing
+  - 1d8
+  - null
+  - ''
+  - '1000'
+  - versatile
+- Blowgun:
+  - martial
+  - Ranged
+  - '1'
+  - Piercing
+  - '1'
+  - 25/100
+  - ''
+  - '1000'
+  - ammmunition, loading
+- Club:
+  - simple
+  - Martial
+  - '2'
+  - Bludgeoning
+  - 1d4
+  - null
+  - ''
+  - '10'
+  - light
+- Dagger:
+  - simple
+  - Martial
+  - '1'
+  - Piercing
+  - 1d4
+  - 20/60
+  - ''
+  - '200'
+  - finesse, light, thrown
+- Dart:
+  - simple
+  - Ranged
+  - '0.25'
+  - Piercing
+  - 1d4
+  - 20/60
+  - ''
+  - '5'
+  - finesse, thrown
+- Double-bladed scimitar:
+  - martial
+  - Martial
+  - '6'
+  - Slashing
+  - 2d4
+  - null
+  - ''
+  - '10000'
+  - special, two-handed
+- Flail:
+  - martial
+  - Martial
+  - '2'
+  - Bludgeoning
+  - 1d8
+  - null
+  - ''
+  - '1000'
+  - ''
+- Glaive:
+  - martial
+  - Martial
+  - '6'
+  - Slashing
+  - 1d10
+  - null
+  - ''
+  - '2000'
+  - heavy, reach, two-handed
+- Greataxe:
+  - martial
+  - Martial
+  - '7'
+  - Slashing
+  - 1d12
+  - null
+  - ''
+  - '3000'
+  - heavy, two-handed
+- Greatclub:
+  - simple
+  - Martial
+  - '10'
+  - Bludgeoning
+  - 1d8
+  - null
+  - ''
+  - '20'
+  - two-handed
+- Greatsword:
+  - martial
+  - Martial
+  - '6'
+  - Slashing
+  - 2d6
+  - null
+  - ''
+  - '5000'
+  - heavy, two-handed
+- Halberd:
+  - martial
+  - Martial
+  - '6'
+  - Slashing
+  - 1d10
+  - null
+  - ''
+  - '2000'
+  - heavy, reach, two-handed
+- Hand crossbow:
+  - martial
+  - Ranged
+  - '3'
+  - Piercing
+  - 1d6
+  - 30/120
+  - ''
+  - '7500'
+  - ammmunition, light, loading
+- Handaxe:
+  - simple
+  - Martial
+  - '2'
+  - Slashing
+  - 1d6
+  - 20/60
+  - ''
+  - '500'
+  - light, thrown
+- Heavy crossbow:
+  - martial
+  - Ranged
+  - '18'
+  - Piercing
+  - 1d10
+  - 100/400
+  - ''
+  - '5000'
+  - ammmunition, heavy, loading, two-handed
+- Hooked shortspear:
+  - martial
+  - Martial
+  - '2'
+  - Piercing
+  - 1d4
+  - null
+  - ''
+  - ''
+  - light
+- Hoopak:
+  - martial
+  - Martial
+  - '2'
+  - Piercing
+  - 1d6
+  - 40/160
+  - ''
+  - '10'
+  - ammmunition, finesse, special, two-handed
+- Javelin:
+  - simple
+  - Martial
+  - '2'
+  - Piercing
+  - 1d6
+  - 30/120
+  - ''
+  - '50'
+  - thrown
+- Lance:
+  - martial
+  - Martial
+  - '6'
+  - Piercing
+  - 1d12
+  - null
+  - ''
+  - '1000'
+  - reach, special
+- Light crossbow:
+  - simple
+  - Ranged
+  - '5'
+  - Piercing
+  - 1d8
+  - 80/320
+  - ''
+  - '2500'
+  - ammmunition, loading, two-handed
+- Light hammer:
+  - simple
+  - Martial
+  - '2'
+  - Bludgeoning
+  - 1d4
+  - 20/60
+  - ''
+  - '200'
+  - light, thrown
+- Light repeating crossbow:
+  - simple
+  - Ranged
+  - '5'
+  - Piercing
+  - 1d8
+  - 40/160
+  - ''
+  - ''
+  - ammmunition, two-handed
+- Longbow:
+  - martial
+  - Ranged
+  - '2'
+  - Piercing
+  - 1d8
+  - 150/600
+  - ''
+  - '5000'
+  - ammmunition, heavy, two-handed
+- Longsword:
+  - martial
+  - Martial
+  - '3'
+  - Slashing
+  - 1d8
+  - null
+  - ''
+  - '1500'
+  - versatile
+- Mace:
+  - simple
+  - Martial
+  - '4'
+  - Bludgeoning
+  - 1d6
+  - null
+  - ''
+  - '500'
+  - ''
+- Maul:
+  - martial
+  - Martial
+  - '10'
+  - Bludgeoning
+  - 2d6
+  - null
+  - ''
+  - '1000'
+  - heavy, two-handed
+- Morningstar:
+  - martial
+  - Martial
+  - '4'
+  - Piercing
+  - 1d8
+  - null
+  - ''
+  - '1500'
+  - ''
+- Net:
+  - martial
+  - Ranged
+  - '3'
+  - ''
+  - null
+  - 5/15
+  - ''
+  - '100'
+  - special, thrown
+- Pike:
+  - martial
+  - Martial
+  - '18'
+  - Piercing
+  - 1d10
+  - null
+  - ''
+  - '500'
+  - heavy, reach, two-handed
+- Quarterstaff:
+  - simple
+  - Martial
+  - '4'
+  - Bludgeoning
+  - 1d6
+  - null
+  - ''
+  - '20'
+  - versatile
+- Rapier:
+  - martial
+  - Martial
+  - '2'
+  - Piercing
+  - 1d8
+  - null
+  - ''
+  - '2500'
+  - finesse
+- Scimitar:
+  - martial
+  - Martial
+  - '3'
+  - Slashing
+  - 1d6
+  - null
+  - ''
+  - '2500'
+  - finesse, light
+- Shortbow:
+  - simple
+  - Ranged
+  - '2'
+  - Piercing
+  - 1d6
+  - 80/320
+  - ''
+  - '2500'
+  - ammmunition, two-handed
+- Shortsword:
+  - martial
+  - Martial
+  - '2'
+  - Piercing
+  - 1d6
+  - null
+  - ''
+  - '1000'
+  - finesse, light
+- Sickle:
+  - simple
+  - Martial
+  - '2'
+  - Slashing
+  - 1d4
+  - null
+  - ''
+  - '100'
+  - light
+- Sling:
+  - simple
+  - Ranged
+  - '0'
+  - Bludgeoning
+  - 1d4
+  - 30/120
+  - ''
+  - '10'
+  - ammmunition
+- Spear:
+  - simple
+  - Martial
+  - '3'
+  - Piercing
+  - 1d6
+  - 20/60
+  - ''
+  - '100'
+  - thrown, versatile
+- Trident:
+  - martial
+  - Martial
+  - '4'
+  - Piercing
+  - 1d6
+  - 20/60
+  - ''
+  - '500'
+  - thrown, versatile
+- War pick:
+  - martial
+  - Martial
+  - '2'
+  - Piercing
+  - 1d8
+  - null
+  - ''
+  - '500'
+  - ''
+- Warhammer:
+  - martial
+  - Martial
+  - '2'
+  - Bludgeoning
+  - 1d8
+  - null
+  - ''
+  - '1500'
+  - versatile
+- Whip:
+  - martial
+  - Martial
+  - '3'
+  - Slashing
+  - 1d4
+  - null
+  - ''
+  - '200'
+  - finesse, reach
+- Yklwa:
+  - simple
+  - Martial
+  - '3'
+  - Piercing
+  - 1d8
+  - 10/30
+  - ''
+  - '100'
+  - thrown
+
