@@ -225,7 +225,7 @@ class MagicWeaponGenerator(WeaponGenerator):
         properties = super().random_properties()
         magic = self.magic.random()
         properties['magic'] = {
-            'adjective': random.choice(magic['adjectives'].split(',')).strip(),
+            'adjective': random.choice(magic['adjective'].split(',')).strip(),
             'noun': random.choice(magic['noun'].split(',')).strip(),
             'die': '1d4'
         }

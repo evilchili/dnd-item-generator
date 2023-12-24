@@ -2,11 +2,11 @@ metadata:
   headers:
     - damage_type
     - noun
-    - adjectives
+    - adjective
     - effect
   frequencies:
     default:
-      magic: 1.0
+      '+1 magic': 1.0
       fire: 1.0
       cold: 1.0
       acid: 1.0
@@ -17,45 +17,36 @@ metadata:
       force: 1.0
       necrotic: 1.0
       radiant: 1.0
-magic:
-  'magic':
-    - magic
-    - '+1'
-  'magic':
-    - magic
-    - '+2'
-  'magic':
-    - magic
-    - '+3'
++1 magic:
+  - magic
+  - '+1'
 fire:
-  flames:
-    - flaming, burning
-    - burning
+  - flames, fire
+  - flaming, burning
 cold:
-  ice:
-    - freezing, frosty
+  - ice
+  - freezing, frosty
 acid:
-  acid:
-    - acidic, caustic
+  - acid
+  - acidic, caustic
 thunder:
-  thunder:
-    - thundering,booming
+  - thunder
+  - thundering,booming
 psychic:
-  psychic:
-    - psychic
-    - psychic
+  - psychic
+  - psychic
 poison:
-  poison:
-    - poisonous,toxic
+  - poison
+  - poisonous,toxic
 lightning:
-  lightning:
-    - lightning,shocking
+  - lightning,sparks,shocks
+  - lightning,shocking,sparking
 force:
-  force:
-    - force
+  - force
+  - forceful
 necrotic:
-  necrosis:
-    - necrotic, darkness, unholy
+  - necrosis
+  - necrotic, darkness, unholy
 radiant:
-  radiance:
-    - radiant, holy
+  - radiance
+  - radiant, holy
