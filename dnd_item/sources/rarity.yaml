@@ -1,15 +1,46 @@
+# 5e Iteam Rarity Distributions By Challenge Rating
+#
+# This distribution is based on this excellent analysis of the DMG loot tables, though 
+# I have smoothed and tweaked a little bit (the CR17+ frequencies are brokekn IMO):
+#
+# https://www.enworld.org/threads/analysis-of-typical-magic-item-distribution.395770/
+# 
 metadata:
   headers:
-    - Rarity
+    - rarity
   frequencies:
-    default:
-      Common: 1.0
-      Uncommon: 0.8
-      Rare: 0.5
-      Legendary: 0.1
-      Unique: 0.05
-Common:
-Uncommon:
-Rare:
-Legendary:
-Unique:
+    'default':
+      common: 1.0
+      uncommon: 1.0
+      rare: 1.0
+      very rare: 1.0
+      legendary: 1.0
+    '1-4':
+      common: 0.75
+      uncommon: 0.5
+      rare: 0.25
+      very rare: 0.0
+      legendary: 0.0
+    '5-10':
+      common: 0.5
+      uncommon: 0.75
+      rare: 0.25
+      very rare: 0.05
+      legendary: 0.0
+    '11-16':
+      common: 0.25
+      uncommon: 0.5
+      rare: 0.75
+      very rare: 0.5
+      legendary: 0.1
+    '17':
+      common: 0.05
+      uncommon: 0.05
+      rare: 0.5
+      very rare: 0.5
+      legendary: 0.3
+common:
+uncommon:
+rare:
+very rare:
+legendary:

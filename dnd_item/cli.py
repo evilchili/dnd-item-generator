@@ -16,7 +16,9 @@ app_state = {}
 
 
 @app.callback()
-def main():
+def main(
+    cr: int = typer.Option(default=None, help='The Challenge Rating to use when determining rarity.'),
+):
     debug = os.getenv("FANITEM_DEBUG", None)
     logging.basicConfig(
         format="%(name)s %(message)s",
@@ -25,20 +27,21 @@ def main():
     )
     logging.getLogger('markdown_it').setLevel(logging.ERROR)
 
+    app_state['cr'] = cr or 0
     app_state['data'] = Path(__file__).parent / Path("sources")
 
 
 @app.command()
 def weapon(count: int = typer.Option(1, help="The number of weapons to generate.")):
     console = Console()
-    for weapon in WeaponGenerator().random(count):
+    for weapon in WeaponGenerator().random(count=count, challenge_rating=app_state['cr']):
         console.print(weapon.details)
 
 
 @app.command()
 def magic_weapon(count: int = typer.Option(1, help="The number of weapons to generate.")):
     console = Console()
-    for weapon in MagicWeaponGenerator().random(count):
+    for weapon in MagicWeaponGenerator().random(count=count, challenge_rating=app_state['cr']):
         console.print(weapon.details)
 
 

@@ -12,7 +12,7 @@ from random_sets.sets import WeightedSet, DataSourceSet
 sources = Path(__file__).parent / Path("sources")
 MAGIC_DAMAGE = DataSourceSet(sources / Path('magic_damage_types.yaml'))
 WEAPON_TYPES = DataSourceSet(sources / Path('weapons.yaml'))
-#  RARITY = DataSourceSet(sources / Path('rarity.yaml'))
+RARITY = DataSourceSet(sources / Path('rarity.yaml'))
 
 
 @dataclass
@@ -143,9 +143,11 @@ class ItemGenerator:
         self,
         templates: WeightedSet,
         types: WeightedSet,
+        rarity: WeightedSet = RARITY,
     ):
         self.types = types
         self.templates = templates
+        self.rarity = rarity
 
     def random_properties(self) -> dict:
         """
@@ -167,14 +169,30 @@ class ItemGenerator:
         properties = {
             'template':  self.templates.random(),
             'type':  self.types.random(),
+            'rarity': self.rarity.random(),
         }
         return properties
 
-    def random(self, count: int = 1) -> list:
+    def random(self, count: int = 1, challenge_rating: int = 0) -> list:
         """
         Generate one or more random Item instances by selecting random values
         from the available types and template
         """
+
+        # select the appropriate frequency distributionnb ased on the specified
+        # challenge rating. By default, all rarities are weighted equally.
+        if challenge_rating in range(1, 5):
+            frequency = '1-4'
+        elif challenge_rating in range(5, 11):
+            frequency = '5-10'
+        elif challenge_rating in range(11, 17):
+            frequency = '11-16'
+        elif challenge_rating >= 17:
+            frequency = '17'
+        else:
+            frequency = 'default'
+        self.rarity.set_frequency(frequency)
+
         items = []
         for _ in range(count):
             items.append(self.item_class.from_dict(**self.random_properties()))
@@ -192,10 +210,11 @@ class WeaponGenerator(ItemGenerator):
         self,
         templates: WeightedSet = None,
         types: WeightedSet = WEAPON_TYPES,
+        rarity: WeightedSet = RARITY,
     ):
         if not templates:
             templates = WeightedSet(('{type.name}', 1.0),)
-        super().__init__(types=types, templates=templates)
+        super().__init__(types=types, templates=templates, rarity=rarity)
 
 
 class MagicWeaponGenerator(WeaponGenerator):
@@ -206,6 +225,7 @@ class MagicWeaponGenerator(WeaponGenerator):
         self,
         templates: WeightedSet = None,
         types: WeightedSet = WEAPON_TYPES,
+        rarity: WeightedSet = RARITY,
         magic: WeightedSet = MAGIC_DAMAGE,
     ):
         self.magic = magic
@@ -216,7 +236,7 @@ class MagicWeaponGenerator(WeaponGenerator):
                 # "Burning Lance"
                 ('{magic.adjective} {type.name}', 1.0),
             )
-        super().__init__(types=types, templates=templates)
+        super().__init__(types=types, templates=templates, rarity=rarity)
 
     def random_properties(self):
         """
