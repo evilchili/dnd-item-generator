@@ -6,6 +6,7 @@ metadata:
     - effect
   frequencies:
     default:
+      magic: 1.0
       fire: 1.0
       cold: 1.0
       acid: 1.0
@@ -16,6 +17,16 @@ metadata:
       force: 1.0
       necrotic: 1.0
       radiant: 1.0
+magic:
+  'magic':
+    - magic
+    - '+1'
+  'magic':
+    - magic
+    - '+2'
+  'magic':
+    - magic
+    - '+3'
 fire:
   flames:
     - flaming, burning
