@@ -1,0 +1,50 @@
+metadata:
+  headers:
+    - damage_type
+    - noun
+    - adjectives
+    - effect
+  frequencies:
+    default:
+      fire: 1.0
+      cold: 1.0
+      acid: 1.0
+      thunder: 1.0
+      psychic: 1.0
+      poison: 1.0
+      lightning: 1.0
+      force: 1.0
+      necrotic: 1.0
+      radiant: 1.0
+fire:
+  flames:
+    - flaming, burning
+    - burning
+cold:
+  ice:
+    - freezing, frosty
+acid:
+  acid:
+    - acidic, caustic
+thunder:
+  thunder:
+    - thundering,booming
+psychic:
+  psychic:
+    - psychic
+    - psychic
+poison:
+  poison:
+    - poisonous,toxic
+lightning:
+  lightning:
+    - lightning,shocking
+force:
+  force:
+    - force
+necrotic:
+  necrosis:
+    - necrotic, darkness, unholy
+radiant:
+  radiance:
+    - radiant, holy

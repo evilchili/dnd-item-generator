@@ -7,9 +7,8 @@ import typer
 
 from rich.logging import RichHandler
 from rich.console import Console
-# from rich.table import Table
 
-from dnd_item.types import random_item
+from dnd_item.types import WeaponGenerator, MagicWeaponGenerator
 from dnd_item import five_e
 
 app = typer.Typer()
@@ -30,13 +29,17 @@ def main():
 
 
 @app.command()
-def item(count: int = typer.Option(1, help="The number of items to generate.")):
-    items = random_item(count)
+def weapon(count: int = typer.Option(1, help="The number of weapons to generate.")):
     console = Console()
-    for item in items:
-        console.print(f"{item['Name']} of {item['Enchantment Noun']} "
-                      f"({item['Damage Dice']} {item['Damage Type']} + "
-                      f"{item['Enchantment Damage']} {item['Enchantment Type']})")
+    for weapon in WeaponGenerator().random(count):
+        console.print(weapon.details)
+
+
+@app.command()
+def magic_weapon(count: int = typer.Option(1, help="The number of weapons to generate.")):
+    console = Console()
+    for weapon in MagicWeaponGenerator().random(count):
+        console.print(weapon.details)
 
 
 @app.command()

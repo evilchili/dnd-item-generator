@@ -3,7 +3,7 @@ import yaml
 
 from collections import defaultdict
 
-from rolltable.tables import DataSource
+from random_sets.datasources import DataSource
 
 from pathlib import Path
 

@@ -1,0 +1,15 @@
+metadata:
+  headers:
+    - Rarity
+  frequencies:
+    default:
+      Common: 1.0
+      Uncommon: 0.8
+      Rare: 0.5
+      Legendary: 0.1
+      Unique: 0.05
+Common:
+Uncommon:
+Rare:
+Legendary:
+Unique:
