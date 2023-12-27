@@ -1,0 +1,24 @@
+metadata:
+  headers:
+    - rarity
+    - name
+    - nouns
+    - adjectives
+    - description
+    - type
+
+common:
+uncommon:
+rare:
+  '+2':
+    - magic
+    - '+2'
+    - This magical weapon grants +2 to attack and damage rolls.
+    - weapon
+very rare:
+  '+3':
+    - magic
+    - '+3'
+    - This magical weapon grants +3 to attack and damage rolls.
+    - weapon
+legendary:

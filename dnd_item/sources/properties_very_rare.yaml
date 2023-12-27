@@ -1,0 +1,20 @@
+metadata:
+  headers:
+    - name
+    - nouns
+    - adjectives
+    - description
+    - damage modifier
+    - type
+element:
+  - '{element.nouns}'
+  - '{element.adjectives}'
+  - 'Attacks made with the {name} do an extra {this.damage_modifier} {element.damage_type} damage.'
+  - d8
+  - weapon
+'+3':
+  - magic
+  - '+3'
+  - This magical weapon grants +3 to attack and damage rolls.
+  - 3
+  - weapon

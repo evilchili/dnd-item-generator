@@ -1,0 +1,12 @@
+metadata:
+  headers:
+    - name
+    - nouns
+    - adjectives
+    - description
+    - type
+light:
+  - 'light'
+  - 'light'
+  - 'Weapons with the light property...'
+  - weapon

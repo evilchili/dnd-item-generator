@@ -1,0 +1,8 @@
+metadata:
+  headers:
+    - name
+    - nouns
+    - adjectives
+    - description
+    - type
+legendary:

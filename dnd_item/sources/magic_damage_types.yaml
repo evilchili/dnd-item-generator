@@ -1,8 +1,8 @@
 metadata:
   headers:
     - damage_type
-    - noun
-    - adjective
+    - nouns
+    - adjectives
   frequencies:
     default:
       fire: 1.0
@@ -28,7 +28,7 @@ thunder:
   - thunder
   - thundering,booming
 psychic:
-  - psychic
+  - mind
   - psychic
 poison:
   - poison
@@ -40,8 +40,8 @@ force:
   - force
   - forceful
 necrotic:
-  - necrosis
-  - necrotic, darkness, unholy
+  - necrosis, darkness, shadows
+  - necrotic, dark, unholy
 radiant:
-  - radiance
+  - radiance, shining
   - radiant, holy

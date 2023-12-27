@@ -1,9 +1,10 @@
 import random
-
 from pathlib import Path
 from dataclasses import dataclass, field
 
 from random_sets.sets import WeightedSet, DataSourceSet
+
+import rolltable.types
 
 
 # Create DataSourceSets, which are WeightedSets populated with DataSource
@@ -13,6 +14,13 @@ sources = Path(__file__).parent / Path("sources")
 MAGIC_DAMAGE = DataSourceSet(sources / Path('magic_damage_types.yaml'))
 WEAPON_TYPES = DataSourceSet(sources / Path('weapons.yaml'))
 RARITY = DataSourceSet(sources / Path('rarity.yaml'))
+PROPERTIES = {
+    'common': DataSourceSet(sources / Path('properties_common.yaml')),
+    'uncommon': DataSourceSet(sources / Path('properties_uncommon.yaml')),
+    'rare': DataSourceSet(sources / Path('properties_rare.yaml')),
+    'very rare': DataSourceSet(sources / Path('properties_very_rare.yaml')),
+    'legendary': DataSourceSet(sources / Path('properties_legendary.yaml')),
+}
 
 
 @dataclass
@@ -59,20 +67,35 @@ class Item:
 
     @property
     def name(self):
-        return self._template.format(name=self._name, **self._attrs).title()
+        return self._template.format(name=self._name, **self._attrs).format(**self._attrs).title()
+
+    @property
+    def summary(self):
+        txt = []
+        for k, v in self._attrs['properties']._attrs.items():
+            txt.append(v.description.format(
+                this=v,
+                name=self.name,
+                **self._attrs,
+            ))
+        return "\n\n".join(txt)
 
     @property
     def details(self):
         """
         Format the item attributes as nested bullet lists.
         """
+        return f"{self.name} ({self.rarity.rarity})\n{self.summary}\n--\n{self.properties}"
+
+    @property
+    def properties(self):
         def attrs_to_lines(item, prefix: str = ''):
             for (k, v) in item._attrs.items():
                 if type(v) is Item:
                     yield from attrs_to_lines(v, prefix=f"{k}.")
                     continue
                 yield f" * {prefix}{k}: {v}"
-        return "\n".join([self.name] + sorted(list(attrs_to_lines(self))))
+        return "\n".join(["Properties:"] + sorted(list(attrs_to_lines(self))))
 
     def __getattr__(self, attr):
         """
@@ -144,12 +167,14 @@ class ItemGenerator:
         templates: WeightedSet,
         types: WeightedSet,
         rarity: WeightedSet = RARITY,
+        properties: WeightedSet = PROPERTIES,
     ):
         self.types = types
         self.templates = templates
         self.rarity = rarity
+        self.properties = properties
 
-    def random_properties(self) -> dict:
+    def random_attributes(self) -> dict:
         """
         Select random values from the available attributes. These values will
         be passed as arguments to the Item constructor.
@@ -164,14 +189,12 @@ class ItemGenerator:
         This method must return a dict that includes both this and that, and
         each of them must be either Item instances or dictionaries.
         """
-
-        # Select one random template string and one item type.
-        properties = {
+        return {
             'template':  self.templates.random(),
             'type':  self.types.random(),
             'rarity': self.rarity.random(),
+            'properties': self.properties.random(),
         }
-        return properties
 
     def random(self, count: int = 1, challenge_rating: int = 0) -> list:
         """
@@ -195,7 +218,7 @@ class ItemGenerator:
 
         items = []
         for _ in range(count):
-            items.append(self.item_class.from_dict(**self.random_properties()))
+            items.append(self.item_class.from_dict(**self.random_attributes()))
         return items
 
 
@@ -211,10 +234,11 @@ class WeaponGenerator(ItemGenerator):
         templates: WeightedSet = None,
         types: WeightedSet = WEAPON_TYPES,
         rarity: WeightedSet = RARITY,
+        properties: WeightedSet = PROPERTIES,
     ):
         if not templates:
             templates = WeightedSet(('{type.name}', 1.0),)
-        super().__init__(types=types, templates=templates, rarity=rarity)
+        super().__init__(types=types, templates=templates, rarity=rarity, properties=properties)
 
 
 class MagicWeaponGenerator(WeaponGenerator):
@@ -223,30 +247,129 @@ class MagicWeaponGenerator(WeaponGenerator):
     """
     def __init__(
         self,
-        templates: WeightedSet = None,
         types: WeightedSet = WEAPON_TYPES,
         rarity: WeightedSet = RARITY,
-        magic: WeightedSet = MAGIC_DAMAGE,
+        element: WeightedSet = MAGIC_DAMAGE,
+        properties: WeightedSet = PROPERTIES,
     ):
-        self.magic = magic
-        if not templates:
-            templates = WeightedSet(
-                # "Shortsword of Flames"
-                ('{type.name} of {magic.noun}', 1.0),
-                # "Burning Lance"
-                ('{magic.adjective} {type.name}', 1.0),
-            )
-        super().__init__(types=types, templates=templates, rarity=rarity)
+        super().__init__(types=types, templates=None, rarity=rarity, properties=properties)
+        self.element = element
+        self.property_count_by_rarity = {
+            'common': WeightedSet((0, 1.0)),
+            'uncommon': WeightedSet((1, 1.0)),
+            'rare': WeightedSet((1, 1.0), (2, 0.1)),
+            'very rare': WeightedSet((1, 1.0), (2, 1.0)),
+            'legendary': WeightedSet((2, 1.0), (3, 1.0)),
+        }
 
-    def random_properties(self):
+    def get_template(self, attrs) -> WeightedSet:
+        if not attrs['properties']:
+            return '{type.name}'
+        options = []
+        if attrs['nouns']:
+            options.append(('{type.name} of {nouns}', 1.0))
+        if attrs['adjectives']:
+            options.append(('{adjectives} {type.name}', 1.0))
+        if attrs['nouns'] and attrs['adjectives']:
+            numprops = len(attrs['properties'].keys())
+            if numprops == 1:
+                options.append(('{adjectives} {type.name} of {nouns}', 1.0))
+            elif len(attrs['properties'].items()) > 1:
+                options.append(('{adjectives} {type.name} of {nouns}', 1.0))
+                options.append(('{type.name} of {adjectives} {nouns}', 1.0))
+        return WeightedSet(*options).random()
+
+    def random_attributes(self) -> dict:
         """
         Select a random magical damage type and add it to our properties.
         """
-        properties = super().random_properties()
-        magic = self.magic.random()
-        properties['magic'] = {
-            'adjective': random.choice(magic['adjective'].split(',')).strip(),
-            'noun': random.choice(magic['noun'].split(',')).strip(),
-            'die': '1d4'
-        }
-        return properties
+
+        # Select a random rarity. This will use the frequency distribution
+        # currently selectedon the rarity data source, which in turn will be
+        # set by self.random(), controllable by the caller.
+        attrs = dict(
+            type=self.types.random(),
+            rarity=self.rarity.random(),
+            properties=dict(),
+        )
+        rarity = attrs['rarity']['rarity']
+
+        numprops = min(
+            self.property_count_by_rarity[rarity].random(),
+            len(self.properties[rarity].members)
+        )
+
+        while len(attrs['properties']) != numprops:
+            prop = self.properties[rarity].random()
+            if prop['name'] in attrs['properties']:
+                continue
+            attrs['properties'][prop['name']] = prop
+
+        # combine multiple property template arguments  together
+        attrs['adjectives'] = []
+        attrs['nouns'] = []
+        for prop_name, prop in attrs['properties'].items():
+            attrs['adjectives'].append(prop['adjectives'])
+            attrs['nouns'].append(prop['nouns'])
+            if prop['name'] == 'element':
+                attrs['element'] = self.element.random()
+                attrs['element']['adjectives'] = random.choice(attrs['element']['adjectives'].split(',')).strip()
+                attrs['element']['nouns'] = random.choice(attrs['element']['nouns'].split(',')).strip()
+
+        attrs['template'] = self.get_template(attrs)
+        attrs['adjectives'] = ' '.join(attrs['adjectives'])
+        attrs['nouns'] = ' '.join(attrs['nouns'])
+        return attrs
+
+
+@dataclass
+class GeneratorSource:
+    generator: ItemGenerator
+    cr: int
+
+    def random_values(self, count: int = 1) -> list:
+        return [
+            [item.name, item.rarity.rarity, item.summary]
+            for item in self.generator.random(count=count, challenge_rating=self.cr)
+        ]
+
+
+class RollTable(rolltable.types.RollTable):
+    def __init__(
+        self,
+        sources: list,
+        die: int = 20,
+        hide_rolls: bool = False,
+        challenge_rating: int = 0
+    ):
+        self._cr = challenge_rating
+        super().__init__(
+            sources=sources,
+            frequency='default',
+            die=die,
+            hide_rolls=hide_rolls
+        )
+
+    def _config(self):
+        self._data = []
+        for src in self._sources:
+            self._data.append(GeneratorSource(generator=src(), cr=self._cr))
+
+        self._headers = [
+            'Name',
+            'Rarity',
+            'Description',
+        ]
+        self._header_excludes = []
+
+    @property
+    def _values(self) -> list:
+        if not self._generated_values:
+            ds_values = [t.random_values(self.die) for t in self._data]
+            self._generated_values = []
+            for face in range(self._die):
+                value = []
+                for index, ds in enumerate(ds_values):
+                    value += ds_values[index][face]
+                self._generated_values.append(value)
+        return self._generated_values
