@@ -8,6 +8,7 @@
 metadata:
   headers:
     - rarity
+    - sort_order
   frequencies:
     'default':
       common: 1.0
@@ -40,7 +41,12 @@ metadata:
       very rare: 0.5
       legendary: 0.3
 common:
+  - 0
 uncommon:
+  - 1
 rare:
+  - 2
 very rare:
+  - 3
 legendary:
+  - 4

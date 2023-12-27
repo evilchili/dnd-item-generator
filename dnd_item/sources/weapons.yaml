@@ -4,8 +4,8 @@ metadata:
   - category
   - type
   - weight
+  - damage_type
   - damage
-  - die
   - range
   - reload
   - value
@@ -16,7 +16,7 @@ Battleaxe:
   - '4'
   - Slashing
   - 1d8
-  - null
+  - 5
   - ''
   - '1000'
   - versatile
@@ -36,7 +36,7 @@ Club:
   - '2'
   - Bludgeoning
   - 1d4
-  - null
+  - 5
   - ''
   - '10'
   - light
@@ -66,7 +66,7 @@ Double-bladed scimitar:
   - '6'
   - Slashing
   - 2d4
-  - null
+  - 5
   - ''
   - '10000'
   - special, two-handed
@@ -76,7 +76,7 @@ Flail:
   - '2'
   - Bludgeoning
   - 1d8
-  - null
+  - 5
   - ''
   - '1000'
   - ''
@@ -86,7 +86,7 @@ Glaive:
   - '6'
   - Slashing
   - 1d10
-  - null
+  - 5
   - ''
   - '2000'
   - heavy, reach, two-handed
@@ -96,7 +96,7 @@ Greataxe:
   - '7'
   - Slashing
   - 1d12
-  - null
+  - 5
   - ''
   - '3000'
   - heavy, two-handed
@@ -106,7 +106,7 @@ Greatclub:
   - '10'
   - Bludgeoning
   - 1d8
-  - null
+  - 5
   - ''
   - '20'
   - two-handed
@@ -116,7 +116,7 @@ Greatsword:
   - '6'
   - Slashing
   - 2d6
-  - null
+  - 5
   - ''
   - '5000'
   - heavy, two-handed
@@ -126,7 +126,7 @@ Halberd:
   - '6'
   - Slashing
   - 1d10
-  - null
+  - 5
   - ''
   - '2000'
   - heavy, reach, two-handed
@@ -166,7 +166,7 @@ Hooked shortspear:
   - '2'
   - Piercing
   - 1d4
-  - null
+  - 5
   - ''
   - ''
   - light
@@ -196,7 +196,7 @@ Lance:
   - '6'
   - Piercing
   - 1d12
-  - null
+  - 5
   - ''
   - '1000'
   - reach, special
@@ -246,7 +246,7 @@ Longsword:
   - '3'
   - Slashing
   - 1d8
-  - null
+  - 5
   - ''
   - '1500'
   - versatile
@@ -256,7 +256,7 @@ Mace:
   - '4'
   - Bludgeoning
   - 1d6
-  - null
+  - 5
   - ''
   - '500'
   - ''
@@ -266,7 +266,7 @@ Maul:
   - '10'
   - Bludgeoning
   - 2d6
-  - null
+  - 5
   - ''
   - '1000'
   - heavy, two-handed
@@ -276,7 +276,7 @@ Morningstar:
   - '4'
   - Piercing
   - 1d8
-  - null
+  - 5
   - ''
   - '1500'
   - ''
@@ -285,7 +285,7 @@ Net:
   - Ranged
   - '3'
   - ''
-  - null
+  - 5
   - 5/15
   - ''
   - '100'
@@ -296,7 +296,7 @@ Pike:
   - '18'
   - Piercing
   - 1d10
-  - null
+  - 5
   - ''
   - '500'
   - heavy, reach, two-handed
@@ -306,7 +306,7 @@ Quarterstaff:
   - '4'
   - Bludgeoning
   - 1d6
-  - null
+  - 5
   - ''
   - '20'
   - versatile
@@ -316,7 +316,7 @@ Rapier:
   - '2'
   - Piercing
   - 1d8
-  - null
+  - 5
   - ''
   - '2500'
   - finesse
@@ -326,7 +326,7 @@ Scimitar:
   - '3'
   - Slashing
   - 1d6
-  - null
+  - 5
   - ''
   - '2500'
   - finesse, light
@@ -346,7 +346,7 @@ Shortsword:
   - '2'
   - Piercing
   - 1d6
-  - null
+  - 5
   - ''
   - '1000'
   - finesse, light
@@ -356,7 +356,7 @@ Sickle:
   - '2'
   - Slashing
   - 1d4
-  - null
+  - 5
   - ''
   - '100'
   - light
@@ -396,7 +396,7 @@ War pick:
   - '2'
   - Piercing
   - 1d8
-  - null
+  - 5
   - ''
   - '500'
   - ''
@@ -406,7 +406,7 @@ Warhammer:
   - '2'
   - Bludgeoning
   - 1d8
-  - null
+  - 5
   - ''
   - '1500'
   - versatile
@@ -416,7 +416,7 @@ Whip:
   - '3'
   - Slashing
   - 1d4
-  - null
+  - 5
   - ''
   - '200'
   - finesse, reach

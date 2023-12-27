@@ -11,7 +11,7 @@ from rich.logging import RichHandler
 from rich.console import Console
 from rich.table import Table
 
-from dnd_item.types import WeaponGenerator, MagicWeaponGenerator, RollTable
+from dnd_item.types import WeaponGenerator,  RollTable
 from dnd_item import five_e
 
 app = typer.Typer()
@@ -22,7 +22,6 @@ class OUTPUT_FORMATS(Enum):
     text = 'text'
     yaml = 'yaml'
     markdown = 'markdown'
-
 
 
 @app.callback()
@@ -48,12 +47,6 @@ def weapon(count: int = typer.Option(1, help="The number of weapons to generate.
         console.print(weapon.details)
 
 
-@app.command()
-def magic_weapon(count: int = typer.Option(1, help="The number of weapons to generate.")):
-    console = Console()
-    for weapon in MagicWeaponGenerator().random(count=count, challenge_rating=app_state['cr']):
-        console.print(weapon.details)
-
 @app.command("roll-table")
 def table(
     die: int = typer.Option(
@@ -78,7 +71,7 @@ def table(
     CLI for creating roll tables of randomly-generated items.
     """
     rt = RollTable(
-        sources=[MagicWeaponGenerator],
+        sources=[WeaponGenerator],
         die=die,
         hide_rolls=hide_rolls,
         challenge_rating=app_state['cr'],
@@ -94,7 +87,6 @@ def table(
         for row in rows[1:]:
             table.add_row(*row)
         print(table)
-
 
 
 @app.command()

@@ -4,17 +4,23 @@ metadata:
     - nouns
     - adjectives
     - description
-    - damage modifier
+    - damage_type
+    - damage
+    - to_hit
     - type
-element:
-  - '{element.nouns}'
-  - '{element.adjectives}'
-  - 'Attacks made with the {name} do an extra {this.damage_modifier} {element.damage_type} damage.'
-  - d8
+enchanted:
+  - '{enchanted.nouns}'
+  - '{enchanted.adjectives}'
+  - 'Attacks made with this magical weapon do an extra {this.damage} {this.damage_type} damage.'
+  - '{enchanted.damage_type}'
+  - 1d8
+  - 0
   - weapon
-'+3':
+magical:
   - magic
   - '+3'
   - This magical weapon grants +3 to attack and damage rolls.
+  - '{base.damage_type}'
+  - 3
   - 3
   - weapon
