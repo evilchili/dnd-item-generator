@@ -7,20 +7,38 @@ metadata:
     - damage_type
     - damage
     - to_hit
+    - override_damage_type
+    - override_damage
     - type
+'elemental damage':
+  - '{enchantment.nouns}'
+  - '{enchantment.adjectives}'
+  - 'This magical {name} deals {this.damage_type} damage.'
+  - '{enchantment.damage_type}'
+  - 0
+  - 0
+  - '{enchantment.damage_type}'
+  - null
+  - weapon
 enchanted:
-  - '{enchanted.nouns}'
-  - '{enchanted.adjectives}'
+  - '{enchantment.nouns}'
+  - '{enchantment.adjectives}'
   - 'Attacks made with this magical weapon do an extra {this.damage} {this.damage_type} damage.'
-  - '{enchanted.damage_type}'
+  - '{enchantment.damage_type}'
   - 1d4
   - 0
+  - null
+  - null
+  - null
   - weapon
 magical:
-  - magic
+  - 'striking, smacking'
   - '+1'
   - This magical weapon grants +1 to attack and damage rolls.
-  - '{base.damage_type}'
+  - '{damage_type}'
   - 1
   - 1
+  - null
+  - null
+  - null
   - weapon

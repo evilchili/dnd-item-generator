@@ -29,7 +29,7 @@ Blowgun:
   - 25/100
   - ''
   - '1000'
-  - ammmunition, loading
+  - ammunition, loading
 Club:
   - simple
   - Martial
@@ -139,7 +139,7 @@ Hand crossbow:
   - 30/120
   - ''
   - '7500'
-  - ammmunition, light, loading
+  - ammunition, light, loading
 Handaxe:
   - simple
   - Martial
@@ -159,7 +159,7 @@ Heavy crossbow:
   - 100/400
   - ''
   - '5000'
-  - ammmunition, heavy, loading, two-handed
+  - ammunition, heavy, loading, two-handed
 Hooked shortspear:
   - martial
   - Martial
@@ -179,7 +179,7 @@ Hoopak:
   - 40/160
   - ''
   - '10'
-  - ammmunition, finesse, special, two-handed
+  - ammunition, finesse, special, two-handed
 Javelin:
   - simple
   - Martial
@@ -209,7 +209,7 @@ Light crossbow:
   - 80/320
   - ''
   - '2500'
-  - ammmunition, loading, two-handed
+  - ammunition, loading, two-handed
 Light hammer:
   - simple
   - Martial
@@ -229,7 +229,7 @@ Light repeating crossbow:
   - 40/160
   - ''
   - ''
-  - ammmunition, two-handed
+  - ammunition, two-handed
 Longbow:
   - martial
   - Ranged
@@ -239,7 +239,7 @@ Longbow:
   - 150/600
   - ''
   - '5000'
-  - ammmunition, heavy, two-handed
+  - ammunition, heavy, two-handed
 Longsword:
   - martial
   - Martial
@@ -339,7 +339,7 @@ Shortbow:
   - 80/320
   - ''
   - '2500'
-  - ammmunition, two-handed
+  - ammunition, two-handed
 Shortsword:
   - martial
   - Martial
@@ -369,7 +369,7 @@ Sling:
   - 30/120
   - ''
   - '10'
-  - ammmunition
+  - ammunition
 Spear:
   - simple
   - Martial

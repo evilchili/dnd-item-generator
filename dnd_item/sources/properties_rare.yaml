@@ -9,18 +9,18 @@ metadata:
     - to_hit
     - type
 enchanted:
-  - '{enchanted.nouns}'
-  - '{enchanted.adjectives}'
+  - '{enchantment.nouns}'
+  - '{enchantment.adjectives}'
   - 'Attacks made with this magical weapon do an extra {this.damage} {this.damage_type} damage.'
-  - '{enchanted.damage_type}'
+  - '{enchantment.damage_type}'
   - 1d6
   - 0
   - weapon
 magical:
-  - magic
+  - 'striking, smacking'
   - '+2'
   - This magical weapon grants +2 to attack and damage rolls.
-  - '{base.damage_type}'
+  - '{damage_type}'
   - 2
   - 2
   - weapon

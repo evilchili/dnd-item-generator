@@ -4,9 +4,19 @@ metadata:
     - nouns
     - adjectives
     - description
+    - damage_type
+    - damage
+    - to_hit
+    - override_damage_type
+    - override_damage
     - type
-light:
-  - 'light'
-  - 'light'
-  - 'A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.'
-  - weapon
+'smiles':
+  - 'smiles, grins, joy, smirks'
+  - 'smiling, grinning, joyfulness, smirking'
+  - 'While this {this.type} is equipped, you are forced to smile.'
+  - null
+  - null
+  - null
+  - null
+  - null
+  - item

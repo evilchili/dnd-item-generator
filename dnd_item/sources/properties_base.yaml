@@ -1,0 +1,24 @@
+metadata:
+  headers:
+    - name
+    - description
+light:
+  - 'A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.'
+thrown:
+  - ''
+heavy:
+  - ''
+special:
+  - ''
+two-handed:
+  - ''
+versatile:
+  - ''
+finesse:
+  - ''
+ammunition:
+  - ''
+reach:
+  - ''
+loading:
+  - ''

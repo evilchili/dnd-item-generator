@@ -16,32 +16,32 @@ metadata:
       necrotic: 1.0
       radiant: 1.0
 fire:
-  - flames, fire
-  - flaming, burning
+  - 'flames, fire'
+  - 'flaming, burning'
 cold:
-  - ice
-  - freezing, frosty
+  - 'ice, cold'
+  - 'freezing, frosty'
 acid:
-  - acid
-  - acidic, caustic
+  - 'acid'
+  - 'acidic, caustic'
 thunder:
-  - thunder
-  - thundering,booming
+  - 'thunder'
+  - 'thundering,booming'
 psychic:
-  - mind
-  - psychic
+  - 'mind, screams'
+  - 'psychic, screaming'
 poison:
-  - poison
-  - poisonous,toxic
+  - 'poison, toxins, venom'
+  - 'poisonous, toxic, venomous'
 lightning:
-  - lightning,sparks,shocks
-  - lightning,shocking,sparking
+  - 'lightning,sparks,shocks'
+  - 'lightning,shocking,sparking'
 force:
-  - force
-  - forceful
+  - 'force'
+  - 'forceful'
 necrotic:
-  - necrosis, darkness, shadows
-  - necrotic, dark, unholy
+  - 'necrosis, darkness, shadows'
+  - 'necrotic, dark, unholy'
 radiant:
-  - radiance, shining
-  - radiant, holy
+  - 'radiance, shining'
+  - 'radiant, holy'

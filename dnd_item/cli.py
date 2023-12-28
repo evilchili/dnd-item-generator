@@ -11,7 +11,8 @@ from rich.logging import RichHandler
 from rich.console import Console
 from rich.table import Table
 
-from dnd_item.types import WeaponGenerator,  RollTable
+from dnd_item.types import RollTable
+from dnd_item.weapons import WeaponGenerator
 from dnd_item import five_e
 
 app = typer.Typer()
