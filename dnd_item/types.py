@@ -252,8 +252,11 @@ class GeneratorSource:
             (
                 item.rarity['sort_order'],
                 [
-                    item.name, item.rarity['rarity'],
-                    item.summary, ', '.join(item.get('properties', []))
+                    item.name,
+                    item.rarity['rarity'],
+                    item.summary,
+                    ', '.join(item.get('properties', [])),
+                    item.id
                 ]
             )
             for item in self.generator.random(count=count, challenge_rating=self.cr)
@@ -286,6 +289,7 @@ class RollTable(rolltable.types.RollTable):
             'Name',
             'Rarity',
             'Summary',
-            'Properties'
+            'Properties',
+            'ID',
         ]
         self._header_excludes = []

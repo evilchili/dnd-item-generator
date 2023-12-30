@@ -17,7 +17,7 @@ enchanted:
   - 0
   - weapon
 magical:
-  - 'striking, smacking'
+  - 'might, mighty strking, mighty smacking, mighty strikes'
   - '+3'
   - This magical weapon grants +3 to attack and damage rolls.
   - '{damage_type}'

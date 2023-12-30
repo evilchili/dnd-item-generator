@@ -61,7 +61,7 @@ def table(
         True,
         help='If True, collapse multiple die values with the same option.'),
     width: int = typer.Option(
-        120,
+        180,
         help='Width of the table.'),
     output: OUTPUT_FORMATS = typer.Option(
         'text',

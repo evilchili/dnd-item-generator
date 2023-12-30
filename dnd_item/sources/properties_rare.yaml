@@ -17,7 +17,7 @@ enchanted:
   - 0
   - weapon
 magical:
-  - 'striking, smacking'
+  - 'precision, precise striking, precise smacking, precise strikes'
   - '+2'
   - This magical weapon grants +2 to attack and damage rolls.
   - '{damage_type}'

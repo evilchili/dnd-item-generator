@@ -32,7 +32,7 @@ enchanted:
   - null
   - weapon
 magical:
-  - 'striking, smacking'
+  - 'honed striking, honed smacking, honed strikes'
   - '+1'
   - This magical weapon grants +1 to attack and damage rolls.
   - '{damage_type}'

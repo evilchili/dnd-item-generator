@@ -1,4 +1,6 @@
 import random
+import base64
+import hashlib
 
 from functools import cached_property
 
@@ -27,14 +29,14 @@ class Weapon(types.Item):
                 nouns[prop_name] = equal_weights(prop.nouns.split(','), blank=False)
             if hasattr(prop, 'adjectives'):
                 adjectives[prop_name] = equal_weights(prop.adjectives.split(','), blank=False)
-            return (nouns, adjectives)
+        return (nouns, adjectives)
 
     def _name_template(self, with_adjectives: bool, with_nouns: bool) -> str:
         num_properties = len(self.properties)
         options = []
-        if with_nouns:
+        if with_nouns and not with_adjectives:
             options.append(('{name} of {nouns}', 0.5))
-        if with_adjectives:
+        if with_adjectives and not with_nouns:
             options.append(('{adjectives} {name}', 0.5))
         if with_nouns and with_adjectives:
             if num_properties == 1:
@@ -60,22 +62,34 @@ class Weapon(types.Item):
         def add_word(key, obj, source):
             obj.append(source[key].random().strip())
 
+        seen_nouns = dict()
         for prop_name in set(list(nouns.keys()) + list(adjectives.keys())):
-            if prop_name in nouns and prop_name in adjectives:
-                val = random.random()
-                if val <= 0.4:
+
+            if prop_name in nouns and prop_name not in adjectives:
+                if prop_name not in seen_nouns:
                     add_word(prop_name, random_nouns, nouns)
+                    seen_nouns[prop_name] = True
+
+            elif prop_name in adjectives and prop_name not in nouns:
+                add_word(prop_name, random_adjectives, adjectives)
+
+            if prop_name in nouns and prop_name in adjectives:
+                # if the property has both nouns and adjectives, select one
+                # or the other or both, for the weapon name. Both leads to
+                # spurious names like 'thundering dagger of thunder', so we
+                # we reduce the likelihood of this eventuality so it is an
+                # occasionl bit of silliness, not consistently silly.
+                val = random.random()
+                if val <= 0.4 and prop_name not in seen_nouns:
+                    add_word(prop_name, random_nouns, nouns)
+                    seen_nouns[prop_name] = True
                 elif val <= 0.8:
                     add_word(prop_name, random_adjectives, adjectives)
                 else:
                     add_word(prop_name, random_nouns, nouns)
                     add_word(prop_name, random_adjectives, adjectives)
-            elif prop_name in nouns:
-                add_word(prop_name, random_nouns, nouns)
-            elif prop_name in adjectives:
-                add_word(prop_name, random_adjectives, adjectives)
 
-        random_nouns = ' '.join(random_nouns)
+        random_nouns = ' and '.join(random_nouns)
         random_adjectives = ' '.join(random_adjectives)
         return (random_nouns, random_adjectives)
 
@@ -131,7 +145,7 @@ class Weapon(types.Item):
 
     @property
     def summary(self):
-        return f"{self.to_hit} to hit, {self.range} ft., {self.targets} targets. {self.damage_dice}"
+        return f"{self.to_hit} to hit, {self.range} ft., {self.targets} tgts. {self.damage_dice}"
 
     @property
     def details(self):
@@ -145,6 +159,13 @@ class Weapon(types.Item):
             f" * {self.summary}",
             f"\n{self.description}\n"
         ])
+
+    @property
+    def id(self):
+        sha1bytes = hashlib.sha1(''.join([
+            self._name, self.to_hit, self.damage_dice,
+        ]).encode())
+        return base64.urlsafe_b64encode(sha1bytes.digest()).decode('ascii')[:10]
 
 
 class WeaponGenerator(types.ItemGenerator):
