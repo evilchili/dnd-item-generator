@@ -1,20 +1,19 @@
-import random
 import base64
 import hashlib
-
+import random
 from functools import cached_property
 
-from dnd_item import types
 from random_sets.sets import WeightedSet, equal_weights
+
+from dnd_item import types
 
 
 def random_from_csv(csv: str) -> str:
-    return random.choice(csv.split(',')).strip()
+    return random.choice(csv.split(",")).strip()
 
 
 class Weapon(types.Item):
-    """
-    """
+    """ """
 
     def _descriptors(self) -> tuple:
         """
@@ -22,30 +21,32 @@ class Weapon(types.Item):
         """
         nouns = dict()
         adjectives = dict()
-        if not hasattr(self, 'properties'):
+        if not hasattr(self, "properties"):
             return (nouns, adjectives)
         for prop_name, prop in self.properties.items():
-            if hasattr(prop, 'nouns'):
-                nouns[prop_name] = equal_weights(prop.nouns.split(','), blank=False)
-            if hasattr(prop, 'adjectives'):
-                adjectives[prop_name] = equal_weights(prop.adjectives.split(','), blank=False)
+            if hasattr(prop, "nouns"):
+                nouns[prop_name] = equal_weights(prop.nouns.split(","), blank=False)
+            if hasattr(prop, "adjectives"):
+                adjectives[prop_name] = equal_weights(prop.adjectives.split(","), blank=False)
         return (nouns, adjectives)
 
     def _name_template(self, with_adjectives: bool, with_nouns: bool) -> str:
         num_properties = len(self.properties)
         options = []
         if with_nouns and not with_adjectives:
-            options.append(('{name} of {nouns}', 0.5))
+            options.append(("{name} of {nouns}", 0.5))
         if with_adjectives and not with_nouns:
-            options.append(('{adjectives} {name}', 0.5))
+            options.append(("{adjectives} {name}", 0.5))
         if with_nouns and with_adjectives:
             if num_properties == 1:
-                options.append(('{adjectives} {name} of {nouns}', 1.0))
+                options.append(("{adjectives} {name} of {nouns}", 1.0))
             elif num_properties > 1:
-                options.extend([
-                    ('{adjectives} {name} of {nouns}', 1.0),
-                    ('{name} of {adjectives} {nouns}', 0.5),
-                ])
+                options.extend(
+                    [
+                        ("{adjectives} {name} of {nouns}", 1.0),
+                        ("{name} of {adjectives} {nouns}", 0.5),
+                    ]
+                )
         return WeightedSet(*options).random()
 
     def _random_descriptors(self):
@@ -64,7 +65,6 @@ class Weapon(types.Item):
 
         seen_nouns = dict()
         for prop_name in set(list(nouns.keys()) + list(adjectives.keys())):
-
             if prop_name in nouns and prop_name not in adjectives:
                 if prop_name not in seen_nouns:
                     add_word(prop_name, random_nouns, nouns)
@@ -89,8 +89,8 @@ class Weapon(types.Item):
                     add_word(prop_name, random_nouns, nouns)
                     add_word(prop_name, random_adjectives, adjectives)
 
-        random_nouns = ' and '.join(random_nouns)
-        random_adjectives = ' '.join(random_adjectives)
+        random_nouns = " and ".join(random_nouns)
+        random_adjectives = " ".join(random_adjectives)
         return (random_nouns, random_adjectives)
 
     @cached_property
@@ -109,11 +109,11 @@ class Weapon(types.Item):
     @property
     def to_hit(self):
         bonus_val = 0
-        bonus_dice = ''
-        if not hasattr(self, 'properties'):
-            return ''
+        bonus_dice = ""
+        if not hasattr(self, "properties"):
+            return ""
         for prop in self.properties.values():
-            mod = getattr(prop, 'to_hit', None)
+            mod = getattr(prop, "to_hit", None)
             if not mod:
                 continue
             if type(mod) is int:
@@ -124,24 +124,22 @@ class Weapon(types.Item):
 
     @property
     def damage_dice(self):
-        if not hasattr(self, 'properties'):
-            return ''
-        dmg = {
-            self.damage_type: str(self.damage) or ''
-        }
+        if not hasattr(self, "properties"):
+            return ""
+        dmg = {self.damage_type: str(self.damage) or ""}
 
         for prop in self.properties.values():
-            mod = getattr(prop, 'damage', None)
+            mod = getattr(prop, "damage", None)
             if not mod:
                 continue
             key = str(prop.damage_type)
-            this_damage = dmg.get(key, '')
+            this_damage = dmg.get(key, "")
             if this_damage:
                 dmg[key] = f"{this_damage}+{mod}"
             else:
                 dmg[key] = mod
 
-        return ' + '.join([f"{v} {k}" for k, v in dmg.items()])
+        return " + ".join([f"{v} {k}" for k, v in dmg.items()])
 
     @property
     def summary(self):
@@ -152,20 +150,28 @@ class Weapon(types.Item):
         """
         Format the item properties as nested bullet lists.
         """
-        props = ', '.join(self.get('properties', dict()).keys())
-        return "\n".join([
-            f"{self.name}",
-            f" * {self.rarity.rarity} {self.category} weapon ({props})",
-            f" * {self.summary}",
-            f"\n{self.description}\n"
-        ])
+        props = ", ".join(self.get("properties", dict()).keys())
+        return "\n".join(
+            [
+                f"{self.name}",
+                f" * {self.rarity.rarity} {self.category} weapon ({props})",
+                f" * {self.summary}",
+                f"\n{self.description}\n",
+            ]
+        )
 
     @property
     def id(self):
-        sha1bytes = hashlib.sha1(''.join([
-            self._name, self.to_hit, self.damage_dice,
-        ]).encode())
-        return base64.urlsafe_b64encode(sha1bytes.digest()).decode('ascii')[:10]
+        sha1bytes = hashlib.sha1(
+            "".join(
+                [
+                    self._name,
+                    self.to_hit,
+                    self.damage_dice,
+                ]
+            ).encode()
+        )
+        return base64.urlsafe_b64encode(sha1bytes.digest()).decode("ascii")[:10]
 
 
 class WeaponGenerator(types.ItemGenerator):
@@ -182,16 +188,16 @@ class WeaponGenerator(types.ItemGenerator):
     def random_properties(self) -> dict:
         # add missing base weapon defaults (TODO: update the sources)
         item = super().random_properties()
-        item['targets'] = 1
-        if item['category'] == 'Martial':
-            if not item['range']:
-                item['range'] = ''
+        item["targets"] = 1
+        if item["category"] == "Martial":
+            if not item["range"]:
+                item["range"] = ""
         return item
 
     # handlers for extra properties
 
     def get_enchantment(self, **attrs) -> dict:
         prop = types.ENCHANTMENT.random()
-        prop['adjectives'] = random_from_csv(prop['adjectives'])
-        prop['nouns'] = random_from_csv(prop['nouns'])
+        prop["adjectives"] = random_from_csv(prop["adjectives"])
+        prop["nouns"] = random_from_csv(prop["nouns"])
         return prop
