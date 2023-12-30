@@ -25,13 +25,47 @@ PROPERTIES_BY_RARITY = {
 
 
 @dataclass
-class AttributeDict(Mapping):
+class AttributeMap(Mapping):
+    """
+    AttributeMap is a data class that is also a mapping, converting a dict
+    into an object with attributes. Example:
+
+        >>> amap = AttributeDict(attributes={'foo': True, 'bar': False})
+        >>> amap.foo
+        True
+        >>> amap.bar
+        False
+
+    Instantiating an AttributeMap using the from_dict() class method will
+    recursively transform dictionary members sinto AttributeMaps:
+
+        >>> nested_dict = {'foo': {'bar': {'baz': True}, 'boz': False}}
+        >>> amap = AttributeDict.from_dict(nested_dict)
+        >>> amap.foo.bar.baz
+        True
+        >>> amap.foo.boz
+        False
+
+    The dictionary can be accessed directly via 'attributes':
+
+        >>> amap = AttributeDict(attributes={'foo': True, 'bar': False})
+        >>> list(amap.attributes.keys()):
+        >>>['foo', 'bar']
+
+    Because AttributeMap is a mapping, you can use it anywhere you would use
+    a regular mapping, like a dict:
+
+        >>> amap = AttributeDict(attributes={'foo': True, 'bar': False})
+        >>> 'foo' in amap
+        True
+        >>> "{foo}, {bar}".format(**amap)
+        True, False
+
+
+    """
     attributes: field(default_factory=dict)
 
     def __getattr__(self, attr):
-        """
-        Look up attributes in the _attrs dict first, then fall back to the default.
-        """
         if attr in self.attributes:
             return self.attributes[attr]
         return self.__getattribute__(attr)
@@ -48,20 +82,96 @@ class AttributeDict(Mapping):
     @classmethod
     def from_dict(cls, kwargs: dict):
         """
-        Create a new AttributeDict object using keyword arguments. Dicts are
-        recursively converted to AttributeDict objects; everything else is
+        Create a new AttributeMap object using keyword arguments. Dicts are
+        recursively converted to AttributeMap objects; everything else is
         passed as-is.
         """
         attrs = {}
         for k, v in sorted(kwargs.items()):
-            attrs[k] = AttributeDict.from_dict(v) if type(v) is dict else v
+            attrs[k] = AttributeMap.from_dict(v) if type(v) is dict else v
         return cls(attributes=attrs)
 
 
 @dataclass
-class Item(AttributeDict):
-    """ """
+class Item(AttributeMap):
+    """
+    Item is the base class for items, weapons, and spells, and is intended to
+    be subclassed to define those things. Item extends AttributeMap to provide
+    some helper methods, including the name and description properties.o
 
+    Creating Items
+
+    To create an Item, call Item.from_dict() with a dictionary as you would an
+    AttributeMap. But unlike the base method, Item.from_dict() processes the
+    values of the dictionary and formats any template strings it encounters,
+    including templates which reference its own attributes. A simple example:
+
+        >>> properties = dict(
+          ?     name='{length}ft. pole',
+          ?     weight='7lbs.',
+          ?     value=5,
+          ?     length=10
+          ? )
+        >>> ten_foot_pole = Item.from_dict(properties)
+        >>> ten_foot_pole.name
+        10ft. Pole
+
+    Note that the name value includes a template that refers to the length
+    property. This reference is resolved when the Item instance is created.
+
+
+    Properties Are Special
+
+    The 'properties' attribute has special meaning for Items; it is the mapping
+    of the item's in-game properties. For weapons, this includes standard
+    properties such as 'light', 'finesse', 'thrown', and so on, but they can be
+    anything you like. Item.properties is also unique in that its members'
+    templates can contain references to other attributes of the Item. For
+    example:
+
+        >>> properties = dict(
+          ?     name='{length}ft. pole',
+          ?     length=10,
+          ?     properties=dict(
+          ?         'engraved'=dict(
+          ?             description='"Property of {info.owner}!"'
+          ?         ),
+          ?     ),
+          ?     info=dict(
+          ?         owner='Jules Ultardottir',
+          ?     )
+          ? )
+        >>> ten_foot_pole = Item.from_dict(properties)
+        >>> ten_foot_pole.description
+        Engraved. "Property of Jules Ultardottir!"
+
+    Overriding Attributes with Properties
+
+    Properties can also override existing item attributes. Any key in the
+    properties dict of the form 'override_<attribute>' will replace the value
+    of <attribute> on the item:
+
+        >>> properties = dict(
+          ?     name='{length}ft. pole',
+          ?     length=10,
+          ?     properties=dict(
+          ?         'broken'=dict(
+          ?             description="The end of this {length}ft. pole has been snapped off.",
+          ?             override_length=7
+          ?         ),
+          ?     )
+          ? )
+        >>> ten_foot_pole = Item.from_dict(properties)
+        >>> ten_foot_pole.name
+        7ft. Pole
+        >>> ten_foot_pole.description
+        Broken. The end of this 10ft. pole has been snapped off.
+
+    This is useful when generating randomized Items, as random properties can
+    be added to base objects, modifying their attribute; the WeaponGenerator
+    (see below) uses overrides to create low-level magic weapons that change
+    the basic bludgeoning/piercing/slashing damage to fire, ice, poison...
+    """
     _name: str = None
 
     @property
@@ -73,7 +183,13 @@ class Item(AttributeDict):
 
     @property
     def description(self):
-        desc = "\n".join([k.title() + ". " + v.description for k, v in self.get("properties", {}).items()])
+        """
+        Summarize the properties of the item, as defined by Item.properties.
+        """
+        desc = "\n".join([
+            k.title() + ". " + v.get('description', '')
+            for k, v in self.get("properties", {}).items()
+        ])
         return desc.format(**self)
 
     @classmethod
@@ -94,11 +210,17 @@ class Item(AttributeDict):
             # enables use of the 'this' keyword to refer to the current context
             # in a template. Refer to the enchantment sources for an example.
             if this:
-                this = AttributeDict.from_dict(this)
+                this = AttributeMap.from_dict(this)
 
             # dicts and lists are descended into
             if type(obj) is dict:
-                return AttributeDict.from_dict(dict((key, _format(val, this=obj)) for key, val in obj.items()))
+                return AttributeMap.from_dict(
+                    dict(
+                        (_format(key, this=obj), _format(val, this=obj))
+                        for key, val in obj.items()
+                    )
+                )
+
             if type(obj) is list:
                 return [_format(o, this=this) for o in obj]
 
@@ -114,11 +236,11 @@ class Item(AttributeDict):
         # step through the supplied attributes and format each member.
         for k, v in attrs.items():
             if type(v) is dict:
-                attributes[k] = AttributeDict.from_dict(_format(v))
+                attributes[k] = AttributeMap.from_dict(_format(v))
             else:
                 attributes[k] = _format(v)
         if properties:
-            attributes["properties"] = AttributeDict.from_dict(_format(properties))
+            attributes["properties"] = AttributeMap.from_dict(_format(properties))
             for prop in attributes["properties"].values():
                 overrides = [k for k in prop.attributes.keys() if k.startswith("override_")]
                 for o in overrides:
@@ -132,15 +254,63 @@ class Item(AttributeDict):
         del attributes["name"]
 
         # At this point, attributes is a dictionary with members of multiple
-        # types, but every dict member has been converted to an AttributeDict,
+        # types, but every dict member has been converted to an AttributeMap,
         # and all template strings in the object have been formatted. Return an
         # instance of the Item class using these formatted attributes.
         return cls(_name=_name, attributes=attributes)
 
 
 class ItemGenerator:
-    """ """
+    """
+    The base class for random item generators.
 
+    This class is intended to be subclassed, by individual subclasses for each
+    type (weapon, item, wand...). An ItemGenerator is instantiated with
+    DataSourceSets for base item definitions and rarity, and a dictionary of
+    property definitions organized by rarity ('common', 'uncommon'...). This
+    module provides a set of pre-defined DataSourceSets (WEAPON_TYPES, RARITY,
+    PROPERTIES_BY_RARITY) for this purpose, but subclasses generally provide
+    sensible defaults specific to their use.
+
+    A simple subclassing example:
+
+        class SharpStickGenerator(types.ItemGenerator):
+            def __init__(self):
+                super().__init__(
+                    bases=WeightedSet(
+                        (dict(name='{type} stick', type='wooden', ...), 0.3),
+                        (dict(name='{type} stick', type='lead', ...), 1.0),
+                        (dict(name='{type} stick', type='silver', ...), 0.5),
+                        (dict(name='{type} stick', type='glass', ...), 0.1),
+                    ),
+                    raritytypes.RARITY,
+                    properties_by_rarity=types.PROPERTIES_BY_RARITY,
+                )
+
+    Generating Random Items
+
+    Given an ItemGenerator class, use the ItemGenerator.random() method to
+    create randomized tiems. To do this, random() will:
+
+        1. Select a random base
+        2. Select a random rarity appropriate for the challenge rating
+        3. Select properties appropriate for legendary items
+
+    Example:
+
+        >>> stick = SharpStickGenerator().random(count=1, challenge_rating=17)
+        >>> stick[0].name
+        Silver Stick
+        >>> stick[0].rarity
+        legendary
+        >>> stick[0].description
+        Magical. This magical weapon grants +3 to attack and damage rolls.
+
+    For more complete examples, refer to the various modules in dnd_item.
+    """
+
+    # random() will generate instances of this class. Subclassers should
+    # override this with a subclass of Item.
     item_class = Item
 
     def __init__(self, bases: WeightedSet, rarity: WeightedSet, properties_by_rarity: dict):
@@ -149,6 +319,12 @@ class ItemGenerator:
         self.properties_by_rarity = properties_by_rarity
 
     def _property_count_by_rarity(self, rarity: str) -> int:
+        """
+        Return a number of properties to add to an item of some rarity. Common items
+        have a 10% chance of hanving one property; Legendary items will have either
+        2 or 3 properties. This is the primary method by which Items of greater
+        rarity become more valuable and wondrous, justifying their rarity.
+        """
         property_count_by_rarity = {
             "common": WeightedSet((1, 0.1), (0, 1.0)),
             "uncommon": WeightedSet((1, 1.0)),
@@ -156,9 +332,26 @@ class ItemGenerator:
             "very rare": WeightedSet((1, 0.5), (2, 1.0)),
             "legendary": WeightedSet((2, 1.0), (3, 1.0)),
         }
-        return min(property_count_by_rarity[rarity].random(), len(self.properties_by_rarity[rarity].members))
+
+        # don't try to apply more unique properties to the item than exist in
+        # the look-up tables.
+        return min(
+            property_count_by_rarity[rarity].random(),
+            len(self.properties_by_rarity[rarity].members)
+        )
 
     def get_requirements(self, item) -> set:
+        """
+        Step through all attributes of an object looking for template strings,
+        and return the unique set of attributes referenced in those template
+        strings.
+
+            >>> props = dict(foo="{one}", bar=dict(baz="{one}", boz="{two.three}"))
+            >>> ItemGenerator().get_requirements(props)
+            {'one', 'two'}
+        """
+
+        # Given "{foo.bar.baz}", capture "foo"
         pat = re.compile(r"{([^\.\}]+)")
 
         def getreqs(obj):
@@ -175,16 +368,53 @@ class ItemGenerator:
         return set(getreqs(item))
 
     def random_properties(self) -> dict:
+        """
+        Create a dictionary of item attributes appropriate for a given rarity.
+        Dictionaries generated by this method are used as arguments to the
+        ItemGenerator.from_dict() method.
+
+        Properties From Callbacks
+
+        Property definitions are loaded from ItemGenerator.properties_by_rarity,
+        but additional properties can be defined by adding callbacks to the
+        ItemGenerator subclass. For example, given the template string:
+
+            {extras.owner}
+
+        if 'extras' does not exist in self.properties_by_rarity,
+        random_properties() will invoke the method self.get_extras with the
+        properties generated thus far, and add the return value to the item:
+
+            def get_extras(self, **item):
+                return dict(
+                    'owner': 'Jules Utandottir',
+                )
+
+        This will result in:
+
+                >>> item['extras']['owner']
+                Jules Ultandottir
+        """
+
+        # select a random base
         item = self.bases.random()
+
+        # select a random rarity
         item["rarity"] = self.rarity.random()
 
-        properties = {}
+        # select a number of properties appropriate to the rarity
         num_properties = self._property_count_by_rarity(item["rarity"]["rarity"])
+
+        # generate the selected number of properties
+        properties = {}
         while len(properties) != num_properties:
             thisprop = self.properties_by_rarity[item["rarity"]["rarity"]].random()
             properties[thisprop["name"]] = thisprop
 
-        # add properties from the base item (versatile, thrown, artifact..)
+        # Base items might have properties already; weapons have things like
+        # 'versatile' and 'two-handed', for example. We'll add these to the
+        # properties dict by looking them up properties_by_rarity dict so the
+        # item we generate will have information about those base proprities.
         for name in item.pop("properties", "").split(","):
             name = name.strip()
             if name:
@@ -192,7 +422,7 @@ class ItemGenerator:
 
         item["properties"] = properties
 
-        # look for template strings that reference item attributes which do not yet exist.
+        # Look for template strings that reference item attributes which do not yet exist.
         # Add anything that is missing via a callback.
         predefined = list(item.keys()) + ["this", "_name"]
         for requirement in [r for r in self.get_requirements(item) if r not in predefined]:
@@ -207,11 +437,14 @@ class ItemGenerator:
     def random(self, count: int = 1, challenge_rating: int = 0) -> list:
         """
         Generate one or more random Item instances by selecting random values
-        from the available types and template
-        """
+        from the available data sources, appropriate to the specified challenge
+        rating.
 
-        # select the appropriate frequency distributionnb ased on the specified
-        # challenge rating. By default, all rarities are weighted equally.
+        Items generated will be appropriate for a challenge rating representing
+        an encounter for an adventuring party of four. This will prevent
+        lower-level encounters from generating legendary weapons and so on. If
+        challenge_rating is 0, a rarity is chosen at random.
+        """
         if challenge_rating in range(1, 5):
             frequency = "1-4"
         elif challenge_rating in range(5, 11):
@@ -232,6 +465,10 @@ class ItemGenerator:
 
 @dataclass
 class GeneratorSource:
+    """
+    A source for a RollTable instance that uses an ItemGenrator to generate
+    random data instead of loading data from a static file source.
+    """
     generator: ItemGenerator
     cr: int
 
@@ -247,6 +484,14 @@ class GeneratorSource:
 
 
 class RollTable(rolltable.types.RollTable):
+    """
+    A subclass of RollTable that uses ItemGenerator clsases to create table rows.
+    Instantiate it by supplying one or more ItemGenerator sources:
+
+        >>> rt = RollTable(sources[WeaponGenerator])
+
+    For a complete example, refer to th dnd_item.cli.table.
+    """
     def __init__(
         self,
         sources: list,
