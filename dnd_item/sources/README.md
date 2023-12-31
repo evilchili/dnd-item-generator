@@ -191,6 +191,16 @@ Here, the `elemental damage` member overrides the base `damage_type` property wi
 Overrides are processed before other template substitutions, ensuring that overrides are honored
 everywhere, so if another property on an item with the `elemental damage` property makes a reference to the base `{damage_type}` value, it will resolve to `{enchantment.damage_type}`.
 
+### Comma-Separated Values
+
+When templates are processed, references to members defined as comma-separated lists are converted to lists, and a random value is selected from it. For example, the nouns on the fire enchantment are:
+
+```yaml
+  - 'flames, fire'
+```
+
+The template string `{enchantment.nouns}` could resolve to either "flames" or "fire".
+
 ### Reserved Keywords
 
 The following keywords are reserved:
