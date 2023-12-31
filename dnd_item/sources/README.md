@@ -157,6 +157,40 @@ enchanted:
 ```
 
 
+#### Overrides
+
+Data set members can override the values of base properties, by including a member with a header beginning with `override_`. Here's an example from `properties_uncommon.yaml`:
+
+```yaml
+metadata:
+  headers:
+    - name
+    - nouns
+    - adjectives
+    - description
+    - damage_type
+    - damage
+    - to_hit
+    - override_damage_type
+    - override_damage
+    - type
+'elemental damage':
+  - '{enchantment.nouns}'
+  - '{enchantment.adjectives}'
+  - 'This magical {name} deals {this.damage_type} damage.'
+  - '{enchantment.damage_type}'
+  - 0
+  - 0
+  - '{enchantment.damage_type}'
+  - null
+  - weapon
+```
+
+Here, the `elemental damage` member overrides the base `damage_type` property with that of the selected enchantment (changing a dagger's slashing damage to fire, for example). The `override_damage` is ignored because its value is `null`.
+
+Overrides are processed before other template substitutions, ensuring that overrides are honored
+everywhere, so if another property on an item with the `elemental damage` property makes a reference to the base `{damage_type}` value, it will resolve to `{enchantment.damage_type}`.
+
 ### Reserved Keywords
 
 The following keywords are reserved:
