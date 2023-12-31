@@ -344,14 +344,14 @@ class ItemGenerator:
             len(self.properties_by_rarity[rarity].members)
         )
 
-    def get_requirements(self, item) -> set:
+    def _get_requirements(self, item) -> set:
         """
         Step through all attributes of an object looking for template strings,
         and return the unique set of attributes referenced in those template
         strings.
 
             >>> props = dict(foo="{one}", bar=dict(baz="{one}", boz="{two.three}"))
-            >>> ItemGenerator().get_requirements(props)
+            >>> ItemGenerator()._get_requirements(props)
             {'one', 'two'}
         """
 
@@ -432,7 +432,7 @@ class ItemGenerator:
         # Look for template strings that reference item attributes which do not yet exist.
         # Add anything that is missing via a callback.
         predefined = list(item.keys()) + ["this", "_name"]
-        for requirement in [r for r in self.get_requirements(item) if r not in predefined]:
+        for requirement in [r for r in self._get_requirements(item) if r not in predefined]:
             try:
                 item[requirement] = getattr(self, f"get_{requirement}")(**item)
             except AttributeError:
