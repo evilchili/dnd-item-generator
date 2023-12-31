@@ -455,18 +455,18 @@ class ItemGenerator:
         If a rarity is supplied, ensure we return items of that rarity; in this
         case challenge_rating is ignored.
         """
-        if challenge_rating in range(1, 5):
-            frequency = "1-4"
-        elif challenge_rating in range(5, 11):
-            frequency = "5-10"
-        elif challenge_rating in range(11, 17):
-            frequency = "11-16"
-        elif challenge_rating >= 17:
-            frequency = "17"
-        else:
-            frequency = "default"
-        self.rarity.set_frequency(frequency)
-
+        if not rarity:
+            if challenge_rating in range(1, 5):
+                frequency = "1-4"
+            elif challenge_rating in range(5, 11):
+                frequency = "5-10"
+            elif challenge_rating in range(11, 17):
+                frequency = "11-16"
+            elif challenge_rating >= 17:
+                frequency = "17"
+            else:
+                frequency = "default"
+            self.rarity.set_frequency(frequency)
         items = []
         for _ in range(count):
             items.append(self.item_class.from_dict(self.random_properties(rarity=rarity)))
