@@ -30,7 +30,7 @@ class AttributeMap(Mapping):
     AttributeMap is a data class that is also a mapping, converting a dict
     into an object with attributes. Example:
 
-        >>> amap = AttributeDict(attributes={'foo': True, 'bar': False})
+        >>> amap = AttributeMap(attributes={'foo': True, 'bar': False})
         >>> amap.foo
         True
         >>> amap.bar
@@ -40,7 +40,7 @@ class AttributeMap(Mapping):
     recursively transform dictionary members sinto AttributeMaps:
 
         >>> nested_dict = {'foo': {'bar': {'baz': True}, 'boz': False}}
-        >>> amap = AttributeDict.from_dict(nested_dict)
+        >>> amap = AttributeMap.from_dict(nested_dict)
         >>> amap.foo.bar.baz
         True
         >>> amap.foo.boz
@@ -48,14 +48,14 @@ class AttributeMap(Mapping):
 
     The dictionary can be accessed directly via 'attributes':
 
-        >>> amap = AttributeDict(attributes={'foo': True, 'bar': False})
+        >>> amap = AttributeMap(attributes={'foo': True, 'bar': False})
         >>> list(amap.attributes.keys()):
         >>>['foo', 'bar']
 
     Because AttributeMap is a mapping, you can use it anywhere you would use
     a regular mapping, like a dict:
 
-        >>> amap = AttributeDict(attributes={'foo': True, 'bar': False})
+        >>> amap = AttributeMap(attributes={'foo': True, 'bar': False})
         >>> 'foo' in amap
         True
         >>> "{foo}, {bar}".format(**amap)
@@ -97,7 +97,7 @@ class Item(AttributeMap):
     """
     Item is the base class for items, weapons, and spells, and is intended to
     be subclassed to define those things. Item extends AttributeMap to provide
-    some helper methods, including the name and description properties.o
+    some helper methods, including the name and description properties.
 
     Creating Items
 
@@ -234,7 +234,7 @@ class Item(AttributeMap):
             return obj
 
         # step through the supplied attributes and format each member.
-        for k, v in attrs.items():
+        for k, v in sorted(attrs.items(), key=lambda i: '{' in f"{i[0]}{i[1]}"):
             if type(v) is dict:
                 attributes[k] = AttributeMap.from_dict(_format(v))
             else:
