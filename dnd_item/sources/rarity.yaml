@@ -39,8 +39,7 @@ metadata:
       uncommon: 0.05
       rare: 0.5
       very rare: 0.5
-      #legendary: 0.3
-      legendary: 0.0
+      legendary: 0.3
 common:
   - 0
 uncommon:

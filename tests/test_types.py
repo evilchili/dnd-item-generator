@@ -61,3 +61,29 @@ def test_Item_overrides():
     ten_foot_pole = types.Item.from_dict(attrs)
     assert ten_foot_pole.name == '7ft. Pole'
     assert ten_foot_pole.description == 'Broken. The end of this 10ft. pole has been snapped off.'
+
+
+def test_ItemGenerator_subclass():
+
+    class SharpStickGenerator(types.ItemGenerator):
+        def __init__(self):
+            super().__init__(
+                bases=types.WeightedSet(
+                    (dict(name='{type} stick', type='wooden'), 0.3),
+                    (dict(name='{type} stick', type='lead'), 1.0),
+                    (dict(name='{type} stick', type='silver'), 0.5),
+                    (dict(name='{type} stick', type='glass'), 0.1),
+                ),
+                rarity=types.RARITY,
+                properties_by_rarity=types.PROPERTIES_BY_RARITY,
+            )
+
+    stick = SharpStickGenerator().random(count=1, rarity='common')
+    assert stick[0].name in [
+        'wooden stick',
+        'lead stick',
+        'silver stick',
+        'glass stick',
+    ]
+    assert stick[0].rarity.rarity == 'common'
+    assert stick[0].description == ''
