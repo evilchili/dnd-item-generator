@@ -157,7 +157,7 @@ enchanted:
 ```
 
 
-#### Overrides
+### Overrides
 
 Data set members can override the values of base properties, by including a member with a header beginning with `override_`. Here's an example from `properties_uncommon.yaml`:
 
