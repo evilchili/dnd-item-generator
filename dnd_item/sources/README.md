@@ -161,5 +161,5 @@ enchanted:
 
 The following keywords are reserved:
 
-`this`: Refers to the current data set member
-`enchantment`: Refers to a random member of the `magic_damage_types.yaml` data set
+* `this`: Refers to the current data set member
+* `enchantment`: Refers to a random member of the `magic_damage_types.yaml` data set
