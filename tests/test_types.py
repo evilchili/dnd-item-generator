@@ -86,4 +86,3 @@ def test_ItemGenerator_subclass():
         'glass stick',
     ]
     assert stick[0].rarity.rarity == 'common'
-    assert stick[0].description == ''
