@@ -156,7 +156,7 @@ class Item(AttributeMap):
           ?     length=10,
           ?     properties=dict(
           ?         'broken'=dict(
-          ?             description="The end of this {length}ft. pole has been snapped off.",
+          ?             description="The end of this 10ft. pole has been snapped off.",
           ?             override_length=7
           ?         ),
           ?     )
@@ -199,10 +199,6 @@ class Item(AttributeMap):
         converted to Item objects; everything else is passed as-is.
         """
 
-        # delay processing the 'properties' attribute until after the other
-        # attributes, because they may contain references to those attributes.
-        properties = attrs.pop("properties", None)
-
         attributes = dict()
 
         # recursively locate and populate template strings
@@ -233,19 +229,25 @@ class Item(AttributeMap):
             # Any type other than dict, list, and string is returned unaltered.
             return obj
 
+        properties = attrs.pop("properties", {})
+
+        # apply property overrides overrides before anything else
+        for prop in properties.values():
+            overrides = [k for k in prop.keys() if k.startswith("override_")]
+            for o in overrides:
+                if prop[o]:
+                    attrs[o.replace("override_", "")] = prop[o]
+
         # step through the supplied attributes and format each member.
         for k, v in sorted(attrs.items(), key=lambda i: '{' in f"{i[0]}{i[1]}"):
             if type(v) is dict:
                 attributes[k] = AttributeMap.from_dict(_format(v))
             else:
                 attributes[k] = _format(v)
+
+        # process properties now that we have preprocessed everything else
         if properties:
             attributes["properties"] = AttributeMap.from_dict(_format(properties))
-            for prop in attributes["properties"].values():
-                overrides = [k for k in prop.attributes.keys() if k.startswith("override_")]
-                for o in overrides:
-                    if prop.attributes[o]:
-                        attributes[o.replace("override_", "")] = prop.attributes[o]
 
         # store the item name as the _name attribute; it is accessable directly, or
         # via the name property. This makes overriding the name convenient for subclassers,
