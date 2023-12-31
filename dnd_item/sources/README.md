@@ -52,10 +52,10 @@ table, a list of dictionaries, and so on. A DataSource instance populated with t
 ```python
 [
     {'rarity': 'common', 'sort_order': 0}},
-    {'rarity': 'uncommon, 'sort_order': 1}},
-    {'rarity': 'rare, 'sort_order': 2}},
-    {'rarity': 'very rare, 'sort_order': 3}},
-    {'rarity': 'legendary, 'sort_order': 4}},
+    {'rarity': 'uncommon', 'sort_order': 1}},
+    {'rarity': 'rare', 'sort_order': 2}},
+    {'rarity': 'very rare', 'sort_order': 3}},
+    {'rarity': 'legendary', 'sort_order': 4}},
 ]
 ```
 
