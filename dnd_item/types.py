@@ -1,4 +1,5 @@
 import logging
+import random
 import re
 from collections.abc import Mapping
 from dataclasses import dataclass, field
@@ -285,7 +286,7 @@ class ItemGenerator:
                         (dict(name='{type} stick', type='silver'), 0.5),
                         (dict(name='{type} stick', type='glass'), 0.1),
                     ),
-                    rarity.types.RARITY,
+                    rarity=types.RARITY,
                     properties_by_rarity=types.PROPERTIES_BY_RARITY,
                 )
 
@@ -317,9 +318,9 @@ class ItemGenerator:
     # override this with a subclass of Item.
     item_class = Item
 
-    def __init__(self, bases: WeightedSet, rarity: WeightedSet, properties_by_rarity: dict):
-        self.bases = bases
-        self.rarity = rarity
+    def __init__(self, bases: WeightedSet = None, rarity: WeightedSet = None, properties_by_rarity: dict = None):
+        self.bases = bases or WeightedSet((dict(name=self.__class__.__name__), 1.0))
+        self.rarity = rarity or RARITY
         self.properties_by_rarity = properties_by_rarity
 
     def _property_count_by_rarity(self, rarity: str) -> int:
@@ -329,6 +330,9 @@ class ItemGenerator:
         2 or 3 properties. This is the primary method by which Items of greater
         rarity become more valuable and wondrous, justifying their rarity.
         """
+        if not self.properties_by_rarity:
+            return 0
+
         property_count_by_rarity = {
             "common": WeightedSet((1, 0.1), (0, 1.0)),
             "uncommon": WeightedSet((1, 1.0)),
@@ -407,7 +411,7 @@ class ItemGenerator:
         if rarity:
             item["rarity"] = self.rarity.source.as_dict()[rarity]
         else:
-            item["rarity"] = self.rarity.random()
+            item['rarity'] = self.rarity.random()
 
         # select a number of properties appropriate to the rarity
         num_properties = self._property_count_by_rarity(item["rarity"]["rarity"])

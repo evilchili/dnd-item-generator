@@ -12,6 +12,7 @@ from rich.table import Table
 from dnd_item import five_e
 from dnd_item.types import RollTable
 from dnd_item.weapons import WeaponGenerator
+from dnd_item.scrolls import ScrollGenerator
 
 app = typer.Typer()
 app_state = {}
@@ -44,6 +45,13 @@ def weapon(count: int = typer.Option(1, help="The number of weapons to generate.
     console = Console()
     for weapon in WeaponGenerator().random(count=count, challenge_rating=app_state["cr"]):
         console.print(weapon.details)
+
+
+@app.command()
+def scroll(count: int = typer.Option(1, help="The number of weapons to generate.")):
+    console = Console()
+    for scroll in ScrollGenerator().random(count=count, challenge_rating=app_state["cr"]):
+        console.print(scroll.details)
 
 
 @app.command("roll-table")
@@ -84,5 +92,5 @@ def table(
 
 @app.command()
 def convert():
-    src = five_e.weapons()
+    src = five_e.spells()
     print(src.as_yaml)

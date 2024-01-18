@@ -271,7 +271,7 @@ class WeaponGenerator(types.ItemGenerator):
     ):
         super().__init__(bases=bases, rarity=rarity, properties_by_rarity=properties_by_rarity)
 
-    def random_properties(self) -> dict:
+    def random_properties(self, rarity: str = '') -> dict:
         # add missing base weapon defaults
         # TODO: update the sources then  delete this method
         item = super().random_properties()

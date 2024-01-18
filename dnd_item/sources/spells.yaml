@@ -1,0 +1,3594 @@
+metadata:
+  headers:
+  - Level
+  - Name
+  - School
+  - Range
+  - Duration
+  - Damage Die
+  - Damage Type
+  - Material Cost
+  frequencies:
+    cantrip:
+      cantrip: 1.0
+      first: 0
+      second: 0
+      third: 0
+      fourth: 0
+      fifth: 0
+      sixth: 0
+      seventh: 0
+      eighth: 0
+      ninth: 0
+    first:
+      cantrip: 0.5
+      first: 1.0
+      second: 0
+      third: 0
+      fourth: 0
+      fifth: 0
+      sixth: 0
+      seventh: 0
+      eighth: 0
+      ninth: 0
+    second:
+      cantrip: 0.5
+      first: 0.5
+      second: 1.0
+      third: 0
+      fourth: 0
+      fifth: 0
+      sixth: 0
+      seventh: 0
+      eighth: 0
+      ninth: 0
+    third:
+      cantrip: 0.5
+      first: 0.5
+      second: 0.5
+      third: 1.0
+      fourth: 0
+      fifth: 0
+      sixth: 0
+      seventh: 0
+      eighth: 0
+      ninth: 0
+    fourth:
+      cantrip: 0
+      first: 0.5
+      second: 0.5
+      third: 0.5
+      fourth: 1.0
+      fifth: 0
+      sixth: 0
+      seventh: 0
+      eighth: 0
+      ninth: 0
+    fifth:
+      cantrip: 0
+      first: 0
+      second: 0.5
+      third: 0.5
+      fourth: 0.5
+      fifth: 1.0
+      sixth: 0
+      seventh: 0
+      eighth: 0
+      ninth: 0
+    sixth:
+      cantrip: 0
+      first: 0
+      second: 0
+      third: 0.5
+      fourth: 0.5
+      fifth: 0.5
+      sixth: 1.0
+      seventh: 0
+      eighth: 0
+      ninth: 0
+    seventh:
+      cantrip: 0
+      first: 0
+      second: 0
+      third: 0
+      fourth: 0.5
+      fifth: 0.5
+      sixth: 0.5
+      seventh: 1.0
+      eighth: 0
+      ninth: 0
+    eighth:
+      cantrip: 0
+      first: 0
+      second: 0
+      third: 0
+      fourth: 0
+      fifth: 0.5
+      sixth: 0.5
+      seventh: 0.5
+      eighth: 1.0
+      ninth: 0
+    ninth:
+      cantrip: 0
+      first: 0
+      second: 0
+      third: 0
+      fourth: 0
+      fifth: 0
+      sixth: 0.5
+      seventh: 0.5
+      eighth: 0.5
+      ninth: 1.0
+cantrip:
+- Acid Splash:
+  - Conjuration
+  - 60 feet
+  - instant
+  - 1d6
+  - acid
+  - ''
+- Blade Ward:
+  - Abjuration
+  - self
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Chill Touch:
+  - Necromancy
+  - 120 feet
+  - 1 round
+  - 1d8
+  - necrotic
+  - ''
+- Dancing Lights:
+  - Evocation
+  - 120 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Druidcraft:
+  - Transmutation
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Eldritch Blast:
+  - Evocation
+  - 120 feet
+  - instant
+  - 1d10
+  - force
+  - ''
+- Fire Bolt:
+  - Evocation
+  - 120 feet
+  - instant
+  - 1d10
+  - fire
+  - ''
+- Friends:
+  - Enchantment
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Guidance:
+  - Divination
+  - touch
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Light:
+  - Evocation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Mage Hand:
+  - Conjuration
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Mending:
+  - Transmutation
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Message:
+  - Transmutation
+  - 120 feet
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Minor Illusion:
+  - Illusion
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Poison Spray:
+  - Conjuration
+  - 10 feet
+  - instant
+  - 1d12
+  - poison
+  - ''
+- Prestidigitation:
+  - Transmutation
+  - 10 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Produce Flame:
+  - Conjuration
+  - self
+  - 10 minutes
+  - 1d8
+  - fire
+  - ''
+- Ray Of Frost:
+  - Evocation
+  - 60 feet
+  - instant
+  - 1d8
+  - cold
+  - ''
+- Resistance:
+  - Abjuration
+  - touch
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Sacred Flame:
+  - Evocation
+  - 60 feet
+  - instant
+  - 1d8
+  - radiant
+  - ''
+- Shillelagh:
+  - Transmutation
+  - touch
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Shocking Grasp:
+  - Evocation
+  - touch
+  - instant
+  - 1d8
+  - lightning
+  - ''
+- Spare The Dying:
+  - Necromancy
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Thaumaturgy:
+  - Transmutation
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Thorn Whip:
+  - Transmutation
+  - 30 feet
+  - instant
+  - 1d6
+  - piercing
+  - ''
+- True Strike:
+  - Divination
+  - 30 feet
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Vicious Mockery:
+  - Enchantment
+  - 60 feet
+  - instant
+  - 1d4
+  - psychic
+  - ''
+- Control Flames:
+  - Transmutation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Create Bonfire:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - 1d8
+  - fire
+  - ''
+- Frostbite:
+  - Evocation
+  - 60 feet
+  - instant
+  - 1d6
+  - cold
+  - ''
+- Gust:
+  - Transmutation
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Infestation:
+  - Conjuration
+  - 30 feet
+  - instant
+  - 1d6
+  - poison
+  - ''
+- Magic Stone:
+  - Transmutation
+  - touch
+  - 1 minute
+  - 1d6
+  - bludgeoning
+  - ''
+- Mold Earth:
+  - Transmutation
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Primal Savagery:
+  - Transmutation
+  - self
+  - instant
+  - 1d10
+  - acid
+  - ''
+- Shape Water:
+  - Transmutation
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Thunderclap:
+  - Evocation
+  - 5 feet
+  - instant
+  - 1d6
+  - thunder
+  - ''
+- Toll The Dead:
+  - Necromancy
+  - 60 feet
+  - instant
+  - 1d8
+  - necrotic
+  - ''
+- Word Of Radiance:
+  - Evocation
+  - 5 feet
+  - instant
+  - 1d6
+  - radiant
+  - ''
+- Booming Blade:
+  - Evocation
+  - 5 feet
+  - 1 round
+  - 1d8
+  - thunder
+  - a melee weapon worth at least 1 sp
+- Green-Flame Blade:
+  - Evocation
+  - 5 feet
+  - instant
+  - 1d8
+  - fire
+  - a melee weapon worth at least 1 sp
+- Lightning Lure:
+  - Evocation
+  - 15 feet
+  - instant
+  - 1d8
+  - lightning
+  - ''
+- Mind Sliver:
+  - Enchantment
+  - 60 feet
+  - 1 round
+  - 1d6
+  - psychic
+  - ''
+- Sword Burst:
+  - Conjuration
+  - 5 feet
+  - instant
+  - 1d6
+  - force
+  - ''
+eighth:
+- Animal Shapes:
+  - Transmutation
+  - 30 feet
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Antimagic Field:
+  - Abjuration
+  - 10 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Antipathy/Sympathy:
+  - Enchantment
+  - 60 feet
+  - 10 days
+  - ''
+  - ''
+  - ''
+- Clone:
+  - Necromancy
+  - touch
+  - instant
+  - ''
+  - ''
+  - a diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature
+    that is to be cloned, which the spell consumes, and a vessel worth at least 2,000
+    gp that has a sealable lid and is large enough to hold the creature being cloned,
+    such as a huge urn, coffin, mud-filled cyst in the ground, or crystal container
+    filled with salt water
+- Control Weather:
+  - Transmutation
+  - 5 miles
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Demiplane:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Dominate Monster:
+  - Enchantment
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Earthquake:
+  - Evocation
+  - 500 feet
+  - 1 minute
+  - 1d6
+  - bludgeoning
+  - ''
+- Feeblemind:
+  - Enchantment
+  - 150 feet
+  - instant
+  - 4d6
+  - psychic
+  - ''
+- Glibness:
+  - Transmutation
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Holy Aura:
+  - Abjuration
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - a tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a
+    scrap of cloth from a saint's robe or a piece of parchment from a religious text
+- Incendiary Cloud:
+  - Conjuration
+  - 150 feet
+  - 1 minute
+  - 10d8
+  - fire
+  - ''
+- Maze:
+  - Conjuration
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Mind Blank:
+  - Abjuration
+  - touch
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Power Word Stun:
+  - Enchantment
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Sunburst:
+  - Evocation
+  - 150 feet
+  - instant
+  - 12d6
+  - radiant
+  - ''
+- Telepathy:
+  - Evocation
+  - unlimited
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Tsunami:
+  - Conjuration
+  - sight
+  - 6 rounds
+  - 6d10
+  - bludgeoning
+  - ''
+- Abi-Dalzim'S Horrid Wilting:
+  - Necromancy
+  - 150 feet
+  - instant
+  - 12d8
+  - necrotic
+  - ''
+- Illusory Dragon:
+  - Illusion
+  - 120 feet
+  - 1 minute
+  - 7d6
+  - acid,cold,fire,lightning,necrotic,poison
+  - ''
+- Maddening Darkness:
+  - Evocation
+  - 150 feet
+  - 10 minutes
+  - 8d8
+  - psychic
+  - ''
+- Mighty Fortress:
+  - Conjuration
+  - 1 miles
+  - instant
+  - ''
+  - ''
+  - a diamond worth at least 500 gp, which the spell consumes
+fifth:
+- Animate Objects:
+  - Transmutation
+  - 120 feet
+  - 1 minute
+  - 1d4
+  - bludgeoning,piercing,slashing
+  - ''
+- Antilife Shell:
+  - Abjuration
+  - 10 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Awaken:
+  - Transmutation
+  - touch
+  - instant
+  - ''
+  - ''
+  - an agate worth at least 1,000 gp, which the spell consumes
+- Banishing Smite:
+  - Abjuration
+  - self
+  - 1 minute
+  - 5d10
+  - force
+  - ''
+- Bigby'S Hand:
+  - Evocation
+  - 120 feet
+  - 1 minute
+  - 4d8
+  - bludgeoning,force
+  - ''
+- Circle Of Power:
+  - Abjuration
+  - 30 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Cloudkill:
+  - Conjuration
+  - 120 feet
+  - 10 minutes
+  - 5d8
+  - poison
+  - ''
+- Commune:
+  - Divination
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Commune With Nature:
+  - Divination
+  - self
+  - instant
+  - ''
+  - ''
+  - ''
+- Cone Of Cold:
+  - Evocation
+  - 60 feet
+  - instant
+  - 8d8
+  - cold
+  - ''
+- Conjure Elemental:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Conjure Volley:
+  - Conjuration
+  - 150 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Contact Other Plane:
+  - Divination
+  - self
+  - 1 minute
+  - 6d6
+  - psychic
+  - ''
+- Contagion:
+  - Necromancy
+  - touch
+  - 7 days
+  - ''
+  - ''
+  - ''
+- Creation:
+  - Illusion
+  - 30 feet
+  - special
+  - ''
+  - ''
+  - ''
+- Destructive Wave:
+  - Evocation
+  - 30 feet
+  - instant
+  - 5d6
+  - necrotic,radiant,thunder
+  - ''
+- Dispel Evil And Good:
+  - Abjuration
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Dominate Person:
+  - Enchantment
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Dream:
+  - Illusion
+  - special
+  - 8 hours
+  - 3d6
+  - psychic
+  - ''
+- Flame Strike:
+  - Evocation
+  - 60 feet
+  - instant
+  - 4d6
+  - fire,radiant
+  - ''
+- Geas:
+  - Enchantment
+  - 60 feet
+  - 30 days
+  - 5d10
+  - psychic
+  - ''
+- Greater Restoration:
+  - Abjuration
+  - touch
+  - instant
+  - ''
+  - ''
+  - diamond dust worth at least 100 gp, which the spell consumes
+- Hallow:
+  - Evocation
+  - touch
+  - permanent
+  - ''
+  - ''
+  - herbs, oils, and incense worth at least 1,000 gp, which the spell consumes
+- Hold Monster:
+  - Enchantment
+  - 90 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Insect Plague:
+  - Conjuration
+  - 300 feet
+  - 10 minutes
+  - 4d10
+  - piercing
+  - ''
+- Legend Lore:
+  - Divination
+  - self
+  - instant
+  - ''
+  - ''
+  - incense worth at least 250 gp, which the spell consumes, and four ivory strips
+    worth at least 50 gp each
+- Mass Cure Wounds:
+  - Evocation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Mislead:
+  - Illusion
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Modify Memory:
+  - Enchantment
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Passwall:
+  - Transmutation
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Planar Binding:
+  - Abjuration
+  - 60 feet
+  - 24 hours
+  - ''
+  - ''
+  - a jewel worth at least 1,000 gp, which the spell consumes
+- Raise Dead:
+  - Necromancy
+  - touch
+  - instant
+  - ''
+  - ''
+  - a diamond worth at least 500 gp, which the spell consumes
+- Rary'S Telepathic Bond:
+  - Divination
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Reincarnate:
+  - Transmutation
+  - touch
+  - instant
+  - ''
+  - ''
+  - rare oils and unguents worth at least 1,000 gp, which the spell consumes
+- Scrying:
+  - Divination
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - a focus worth at least 1,000 gp, such as a crystal ball, a silver mirror, or a
+    font filled with holy water
+- Seeming:
+  - Illusion
+  - 30 feet
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Swift Quiver:
+  - Transmutation
+  - touch
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Telekinesis:
+  - Transmutation
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Teleportation Circle:
+  - Conjuration
+  - 10 feet
+  - 1 round
+  - ''
+  - ''
+  - rare chalks and inks infused with precious gems worth 50 gp, which the spell consumes
+- Tree Stride:
+  - Conjuration
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Wall Of Force:
+  - Evocation
+  - 120 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Wall Of Stone:
+  - Evocation
+  - 120 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Summon Draconic Spirit:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - an object with the image of a dragon engraved on it, worth at least 500 gp
+- Control Winds:
+  - Transmutation
+  - 300 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Danse Macabre:
+  - Necromancy
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Dawn:
+  - Evocation
+  - 60 feet
+  - 1 minute
+  - 4d10
+  - radiant
+  - a sunburst pendant worth at least 100 gp
+- Enervation:
+  - Necromancy
+  - 60 feet
+  - 1 minute
+  - 2d8
+  - necrotic
+  - ''
+- Far Step:
+  - Conjuration
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Holy Weapon:
+  - Evocation
+  - touch
+  - 1 hour
+  - 2d8
+  - radiant
+  - ''
+- Immolation:
+  - Evocation
+  - 90 feet
+  - 1 minute
+  - 8d6
+  - fire
+  - ''
+- Infernal Calling:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - a ruby worth at least 999 gp
+- Maelstrom:
+  - Evocation
+  - 120 feet
+  - 1 minute
+  - 6d6
+  - bludgeoning
+  - ''
+- Negative Energy Flood:
+  - Necromancy
+  - 60 feet
+  - instant
+  - 5d12
+  - necrotic
+  - ''
+- Skill Empowerment:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Steel Wind Strike:
+  - Conjuration
+  - 30 feet
+  - instant
+  - 6d10
+  - force
+  - a melee weapon worth at least 1 sp
+- Synaptic Static:
+  - Enchantment
+  - 120 feet
+  - instant
+  - 8d6
+  - psychic
+  - ''
+- Transmute Rock:
+  - Transmutation
+  - 120 feet
+  - permanent
+  - 4d8
+  - bludgeoning
+  - ''
+- Wall Of Light:
+  - Evocation
+  - 120 feet
+  - 10 minutes
+  - 4d8
+  - radiant
+  - ''
+- Wrath Of Nature:
+  - Evocation
+  - 120 feet
+  - 1 minute
+  - 4d6
+  - bludgeoning,slashing
+  - ''
+- Summon Celestial:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - a golden reliquary worth at least 500 gp
+first:
+- Alarm:
+  - Abjuration
+  - 30 feet
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Animal Friendship:
+  - Enchantment
+  - 30 feet
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Armor Of Agathys:
+  - Abjuration
+  - self
+  - 1 hour
+  - ''
+  - cold
+  - ''
+- Arms Of Hadar:
+  - Conjuration
+  - 10 feet
+  - instant
+  - 2d6
+  - necrotic
+  - ''
+- Bane:
+  - Enchantment
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Bless:
+  - Enchantment
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Burning Hands:
+  - Evocation
+  - 15 feet
+  - instant
+  - 3d6
+  - fire
+  - ''
+- Charm Person:
+  - Enchantment
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Chromatic Orb:
+  - Evocation
+  - 90 feet
+  - instant
+  - 3d8
+  - acid,cold,fire,lightning,poison,thunder
+  - a diamond worth at least 50 gp
+- Color Spray:
+  - Illusion
+  - 15 feet
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Command:
+  - Enchantment
+  - 60 feet
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Compelled Duel:
+  - Enchantment
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Comprehend Languages:
+  - Divination
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Create Or Destroy Water:
+  - Transmutation
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Cure Wounds:
+  - Evocation
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Detect Evil And Good:
+  - Divination
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Detect Magic:
+  - Divination
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Detect Poison And Disease:
+  - Divination
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Disguise Self:
+  - Illusion
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Dissonant Whispers:
+  - Enchantment
+  - 60 feet
+  - instant
+  - 3d6
+  - psychic
+  - ''
+- Divine Favor:
+  - Evocation
+  - self
+  - 1 minute
+  - 1d4
+  - radiant
+  - ''
+- Ensnaring Strike:
+  - Conjuration
+  - self
+  - 1 minute
+  - 1d6
+  - piercing
+  - ''
+- Entangle:
+  - Conjuration
+  - 90 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Expeditious Retreat:
+  - Transmutation
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Faerie Fire:
+  - Evocation
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- False Life:
+  - Necromancy
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Feather Fall:
+  - Transmutation
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Find Familiar:
+  - Conjuration
+  - 10 feet
+  - instant
+  - ''
+  - ''
+  - 10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a
+    brass brazier
+- Fog Cloud:
+  - Conjuration
+  - 120 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Goodberry:
+  - Transmutation
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Grease:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Guiding Bolt:
+  - Evocation
+  - 120 feet
+  - 1 round
+  - 4d6
+  - radiant
+  - ''
+- Hail Of Thorns:
+  - Conjuration
+  - self
+  - 1 minute
+  - 1d10
+  - piercing
+  - ''
+- Healing Word:
+  - Evocation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Hellish Rebuke:
+  - Evocation
+  - 60 feet
+  - instant
+  - 2d10
+  - fire
+  - ''
+- Heroism:
+  - Enchantment
+  - touch
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Hex:
+  - Enchantment
+  - 90 feet
+  - 1 hour
+  - 1d6
+  - necrotic
+  - ''
+- Hunter'S Mark:
+  - Divination
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Identify:
+  - Divination
+  - touch
+  - instant
+  - ''
+  - ''
+  - a pearl worth at least 100 gp and an owl feather
+- Illusory Script:
+  - Illusion
+  - touch
+  - 10 days
+  - ''
+  - ''
+  - a lead-based ink worth at least 10 gp, which the spell consumes
+- Inflict Wounds:
+  - Necromancy
+  - touch
+  - instant
+  - 3d10
+  - necrotic
+  - ''
+- Jump:
+  - Transmutation
+  - touch
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Longstrider:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Mage Armor:
+  - Abjuration
+  - touch
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Magic Missile:
+  - Evocation
+  - 120 feet
+  - instant
+  - 1d4
+  - force
+  - ''
+- Protection From Evil And Good:
+  - Abjuration
+  - touch
+  - 10 minutes
+  - ''
+  - ''
+  - holy water or powdered silver and iron, which the spell consumes
+- Purify Food And Drink:
+  - Transmutation
+  - 10 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Ray Of Sickness:
+  - Necromancy
+  - 60 feet
+  - instant
+  - 2d8
+  - poison
+  - ''
+- Sanctuary:
+  - Abjuration
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Searing Smite:
+  - Evocation
+  - self
+  - 1 minute
+  - 1d6
+  - fire
+  - ''
+- Shield:
+  - Abjuration
+  - self
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Shield Of Faith:
+  - Abjuration
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Silent Image:
+  - Illusion
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Sleep:
+  - Enchantment
+  - 90 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Speak With Animals:
+  - Divination
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Tasha'S Hideous Laughter:
+  - Enchantment
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Tenser'S Floating Disk:
+  - Conjuration
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Thunderous Smite:
+  - Evocation
+  - self
+  - 1 minute
+  - 2d6
+  - thunder
+  - ''
+- Thunderwave:
+  - Evocation
+  - 15 feet
+  - instant
+  - 2d8
+  - thunder
+  - ''
+- Unseen Servant:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Witch Bolt:
+  - Evocation
+  - 30 feet
+  - 1 minute
+  - 1d12
+  - lightning
+  - ''
+- Wrathful Smite:
+  - Evocation
+  - self
+  - 1 minute
+  - 1d6
+  - psychic
+  - ''
+- Silvery Barbs:
+  - Enchantment
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Absorb Elements:
+  - Abjuration
+  - self
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Beast Bond:
+  - Divination
+  - touch
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Catapult:
+  - Transmutation
+  - 60 feet
+  - instant
+  - 3d8
+  - bludgeoning
+  - ''
+- Cause Fear:
+  - Necromancy
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Ceremony:
+  - Abjuration
+  - touch
+  - instant
+  - ''
+  - ''
+  - 25 gp worth of powdered silver, which the spell consumes
+- Chaos Bolt:
+  - Evocation
+  - 120 feet
+  - instant
+  - 2d8
+  - acid,cold,fire,force,lightning,poison,psychic,thunder
+  - ''
+- Earth Tremor:
+  - Evocation
+  - 10 feet
+  - instant
+  - 1d6
+  - bludgeoning
+  - ''
+- Ice Knife:
+  - Conjuration
+  - 60 feet
+  - instant
+  - 1d10
+  - cold,piercing
+  - ''
+- Snare:
+  - Abjuration
+  - touch
+  - 8 hours
+  - ''
+  - ''
+  - 25 feet of rope, which the spell consumes
+- Zephyr Strike:
+  - Transmutation
+  - self
+  - 1 minute
+  - 1d8
+  - force
+  - ''
+- Tasha'S Caustic Brew:
+  - Evocation
+  - 30 feet
+  - 1 minute
+  - 2d4
+  - acid
+  - ''
+fourth:
+- Arcane Eye:
+  - Divination
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Aura Of Life:
+  - Abjuration
+  - 30 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Aura Of Purity:
+  - Abjuration
+  - 30 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Banishment:
+  - Abjuration
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Blight:
+  - Necromancy
+  - 30 feet
+  - instant
+  - 8d8
+  - necrotic
+  - ''
+- Compulsion:
+  - Enchantment
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Confusion:
+  - Enchantment
+  - 90 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Conjure Minor Elementals:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Conjure Woodland Beings:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Control Water:
+  - Transmutation
+  - 300 feet
+  - 10 minutes
+  - 2d8
+  - bludgeoning
+  - ''
+- Death Ward:
+  - Abjuration
+  - touch
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Dimension Door:
+  - Conjuration
+  - 500 feet
+  - instant
+  - 4d6
+  - force
+  - ''
+- Divination:
+  - Divination
+  - self
+  - instant
+  - ''
+  - ''
+  - incense and a sacrificial offering appropriate to your religion, together worth
+    at least 25 gp, which the spell consumes
+- Dominate Beast:
+  - Enchantment
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Evard'S Black Tentacles:
+  - Conjuration
+  - 90 feet
+  - 1 minute
+  - 3d6
+  - bludgeoning
+  - ''
+- Fabricate:
+  - Transmutation
+  - 120 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Fire Shield:
+  - Evocation
+  - self
+  - 10 minutes
+  - 2d8
+  - cold,fire
+  - ''
+- Freedom Of Movement:
+  - Abjuration
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Giant Insect:
+  - Transmutation
+  - 30 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Grasping Vine:
+  - Conjuration
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Greater Invisibility:
+  - Illusion
+  - touch
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Guardian Of Faith:
+  - Conjuration
+  - 30 feet
+  - 8 hours
+  - ''
+  - radiant
+  - ''
+- Hallucinatory Terrain:
+  - Illusion
+  - 300 feet
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Ice Storm:
+  - Evocation
+  - 300 feet
+  - instant
+  - 2d8
+  - bludgeoning,cold
+  - ''
+- Leomund'S Secret Chest:
+  - Conjuration
+  - touch
+  - instant
+  - ''
+  - ''
+  - an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials
+    worth at least 5,000 gp, and a Tiny replica made from the same materials worth
+    at least 50 gp
+- Locate Creature:
+  - Divination
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Mordenkainen'S Faithful Hound:
+  - Conjuration
+  - 30 feet
+  - 8 hours
+  - 4d8
+  - piercing
+  - ''
+- Mordenkainen'S Private Sanctum:
+  - Abjuration
+  - 120 feet
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Otiluke'S Resilient Sphere:
+  - Evocation
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Phantasmal Killer:
+  - Illusion
+  - 120 feet
+  - 1 minute
+  - 4d10
+  - psychic
+  - ''
+- Polymorph:
+  - Transmutation
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Staggering Smite:
+  - Evocation
+  - self
+  - 1 minute
+  - 4d6
+  - psychic
+  - ''
+- Stone Shape:
+  - Transmutation
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Stoneskin:
+  - Abjuration
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - diamond dust worth 100 gp, which the spell consumes
+- Wall Of Fire:
+  - Evocation
+  - 120 feet
+  - 1 minute
+  - 5d8
+  - fire
+  - ''
+- Raulothim'S Psychic Lance:
+  - Enchantment
+  - 120 feet
+  - instant
+  - 7d6
+  - psychic
+  - ''
+- Charm Monster:
+  - Enchantment
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Elemental Bane:
+  - Transmutation
+  - 90 feet
+  - 1 minute
+  - 2d6
+  - acid,cold,fire,lightning,thunder
+  - ''
+- Find Greater Steed:
+  - Conjuration
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Guardian Of Nature:
+  - Transmutation
+  - self
+  - 1 minute
+  - 1d6
+  - force
+  - ''
+- Shadow Of Moil:
+  - Necromancy
+  - self
+  - 1 minute
+  - 2d8
+  - necrotic
+  - an undead eyeball encased in a gem worth at least 150 gp
+- Sickening Radiance:
+  - Evocation
+  - 120 feet
+  - 10 minutes
+  - 4d10
+  - radiant
+  - ''
+- Storm Sphere:
+  - Evocation
+  - 150 feet
+  - 1 minute
+  - 2d6
+  - bludgeoning,lightning
+  - ''
+- Summon Greater Demon:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - a vial of blood from a humanoid killed within the past 24 hours
+- Vitriolic Sphere:
+  - Evocation
+  - 150 feet
+  - instant
+  - 10d4
+  - acid
+  - ''
+- Watery Sphere:
+  - Conjuration
+  - 90 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Summon Aberration:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - a pickled tentacle and an eyeball in a platinum-inlaid vial worth at least 400
+    gp
+- Summon Construct:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - an ornate stone and metal lockbox worth at least 400 gp
+- Summon Elemental:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - air, a pebble, ash, and water inside a gold-inlaid vial worth at least 400 gp
+ninth:
+- Astral Projection:
+  - Necromancy
+  - 10 feet
+  - special
+  - ''
+  - ''
+  - for each creature you affect with this spell, you must provide one jacinth worth
+    at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp,
+    all of which the spell consumes
+- Foresight:
+  - Divination
+  - touch
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Gate:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - a diamond worth at least 5,000 gp
+- Imprisonment:
+  - Abjuration
+  - 30 feet
+  - permanent
+  - ''
+  - ''
+  - a vellum depiction or a carved statuette in the likeness of the target, and a
+    special component that varies according to the version of the spell you choose,
+    worth at least 500 gp per Hit Die of the target
+- Mass Heal:
+  - Evocation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Meteor Swarm:
+  - Evocation
+  - 1 miles
+  - instant
+  - 20d6
+  - bludgeoning,fire
+  - ''
+- Power Word Heal:
+  - Evocation
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Power Word Kill:
+  - Enchantment
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Prismatic Wall:
+  - Abjuration
+  - 60 feet
+  - 10 minutes
+  - 10d6
+  - acid,cold,fire,force,lightning,poison
+  - ''
+- Shapechange:
+  - Transmutation
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - a jade circlet worth at least 1,500 gp, which you must place on your head before
+    you cast the spell
+- Storm Of Vengeance:
+  - Conjuration
+  - sight
+  - 1 minute
+  - 2d6
+  - acid,bludgeoning,cold,lightning,thunder
+  - ''
+- Time Stop:
+  - Transmutation
+  - self
+  - instant
+  - ''
+  - ''
+  - ''
+- True Polymorph:
+  - Transmutation
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- True Resurrection:
+  - Necromancy
+  - touch
+  - instant
+  - ''
+  - ''
+  - a sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell
+    consumes
+- Weird:
+  - Illusion
+  - 120 feet
+  - 1 minute
+  - 4d10
+  - psychic
+  - ''
+- Wish:
+  - Conjuration
+  - self
+  - instant
+  - 1d10
+  - necrotic
+  - ''
+- Invulnerability:
+  - Abjuration
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - a small piece of adamantine worth at least 500 gp, which the spell consumes
+- Mass Polymorph:
+  - Transmutation
+  - 120 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Psychic Scream:
+  - Enchantment
+  - 90 feet
+  - instant
+  - 14d6
+  - psychic
+  - ''
+- Blade Of Disaster:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - 4d12
+  - force
+  - ''
+second:
+- Aid:
+  - Abjuration
+  - 30 feet
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Alter Self:
+  - Transmutation
+  - self
+  - 1 hour
+  - 1d6
+  - bludgeoning,piercing,slashing
+  - ''
+- Animal Messenger:
+  - Enchantment
+  - 30 feet
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Arcane Lock:
+  - Abjuration
+  - touch
+  - permanent
+  - ''
+  - ''
+  - gold dust worth at least 25 gp, which the spell consumes
+- Augury:
+  - Divination
+  - self
+  - instant
+  - ''
+  - ''
+  - specially marked sticks, bones, or similar tokens worth at least 25 gp
+- Barkskin:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Beast Sense:
+  - Divination
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Blindness/Deafness:
+  - Necromancy
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Blur:
+  - Illusion
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Branding Smite:
+  - Evocation
+  - self
+  - 1 minute
+  - 2d6
+  - radiant
+  - ''
+- Calm Emotions:
+  - Enchantment
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Cloud Of Daggers:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - 4d4
+  - slashing
+  - ''
+- Continual Flame:
+  - Evocation
+  - touch
+  - permanent
+  - ''
+  - ''
+  - ruby dust worth 50 gp, which the spell consumes
+- Cordon Of Arrows:
+  - Transmutation
+  - 5 feet
+  - 8 hours
+  - 1d6
+  - piercing
+  - ''
+- Crown Of Madness:
+  - Enchantment
+  - 120 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Darkness:
+  - Evocation
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Darkvision:
+  - Transmutation
+  - touch
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Detect Thoughts:
+  - Divination
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Enhance Ability:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Enlarge/Reduce:
+  - Transmutation
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Enthrall:
+  - Enchantment
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Find Steed:
+  - Conjuration
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Find Traps:
+  - Divination
+  - 120 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Flame Blade:
+  - Evocation
+  - self
+  - 10 minutes
+  - 3d6
+  - fire
+  - ''
+- Flaming Sphere:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - 2d6
+  - fire
+  - ''
+- Gentle Repose:
+  - Necromancy
+  - touch
+  - 10 days
+  - ''
+  - ''
+  - ''
+- Gust Of Wind:
+  - Evocation
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Heat Metal:
+  - Transmutation
+  - 60 feet
+  - 1 minute
+  - 2d8
+  - fire
+  - ''
+- Hold Person:
+  - Enchantment
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Invisibility:
+  - Illusion
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Knock:
+  - Transmutation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Lesser Restoration:
+  - Abjuration
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Levitate:
+  - Transmutation
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Locate Animals Or Plants:
+  - Divination
+  - self
+  - instant
+  - ''
+  - ''
+  - ''
+- Locate Object:
+  - Divination
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Magic Mouth:
+  - Illusion
+  - 30 feet
+  - permanent
+  - ''
+  - ''
+  - a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes
+- Magic Weapon:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Melf'S Acid Arrow:
+  - Evocation
+  - 90 feet
+  - instant
+  - 4d4
+  - acid
+  - ''
+- Mirror Image:
+  - Illusion
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Misty Step:
+  - Conjuration
+  - self
+  - instant
+  - ''
+  - ''
+  - ''
+- Moonbeam:
+  - Evocation
+  - 120 feet
+  - 1 minute
+  - 2d10
+  - radiant
+  - ''
+- Nystul'S Magic Aura:
+  - Illusion
+  - touch
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Pass Without Trace:
+  - Abjuration
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Phantasmal Force:
+  - Illusion
+  - 60 feet
+  - 1 minute
+  - 1d6
+  - psychic
+  - ''
+- Prayer Of Healing:
+  - Evocation
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Protection From Poison:
+  - Abjuration
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Ray Of Enfeeblement:
+  - Necromancy
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Rope Trick:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Scorching Ray:
+  - Evocation
+  - 120 feet
+  - instant
+  - 2d6
+  - fire
+  - ''
+- See Invisibility:
+  - Divination
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Shatter:
+  - Evocation
+  - 60 feet
+  - instant
+  - 3d8
+  - thunder
+  - ''
+- Silence:
+  - Illusion
+  - 120 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Spider Climb:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Spike Growth:
+  - Transmutation
+  - 150 feet
+  - 10 minutes
+  - 2d4
+  - piercing
+  - ''
+- Spiritual Weapon:
+  - Evocation
+  - 60 feet
+  - 1 minute
+  - 1d8
+  - force
+  - ''
+- Suggestion:
+  - Enchantment
+  - 30 feet
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Warding Bond:
+  - Abjuration
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - a pair of platinum rings worth at least 50 gp each, which you and the target must
+    wear for the duration
+- Web:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - 2d4
+  - fire
+  - ''
+- Zone Of Truth:
+  - Enchantment
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Nathair'S Mischief:
+  - Illusion
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Rime'S Binding Ice:
+  - Evocation
+  - 30 feet
+  - instant
+  - 3d8
+  - cold
+  - ''
+- Borrowed Knowledge:
+  - Divination
+  - self
+  - 1 hour
+  - ''
+  - ''
+  - a book worth at least 25 gp
+- Kinetic Jaunt:
+  - Transmutation
+  - self
+  - 1 minute
+  - 1d8
+  - force
+  - ''
+- Vortex Warp:
+  - Conjuration
+  - 90 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Wither And Bloom:
+  - Necromancy
+  - 60 feet
+  - instant
+  - 2d6
+  - necrotic
+  - ''
+- Aganazzar'S Scorcher:
+  - Evocation
+  - 30 feet
+  - instant
+  - 3d8
+  - fire
+  - ''
+- Dragon'S Breath:
+  - Transmutation
+  - touch
+  - 1 minute
+  - 3d6
+  - acid,cold,fire,lightning,poison
+  - ''
+- Dust Devil:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - 1d8
+  - bludgeoning
+  - ''
+- Earthbind:
+  - Transmutation
+  - 300 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Healing Spirit:
+  - Conjuration
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Maximilian'S Earthen Grasp:
+  - Transmutation
+  - 30 feet
+  - 1 minute
+  - 2d6
+  - bludgeoning
+  - ''
+- Mind Spike:
+  - Divination
+  - 60 feet
+  - 1 hour
+  - 3d8
+  - psychic
+  - ''
+- Pyrotechnics:
+  - Transmutation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Shadow Blade:
+  - Illusion
+  - self
+  - 1 minute
+  - 2d8
+  - psychic
+  - ''
+- Skywrite:
+  - Transmutation
+  - sight
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Snilloc'S Snowball Swarm:
+  - Evocation
+  - 90 feet
+  - instant
+  - 3d6
+  - cold
+  - ''
+- Warding Wind:
+  - Evocation
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Summon Beast:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - a feather, tuft of fur, and fish tail inside a gilded acorn worth at least 200
+    gp
+- Tasha'S Mind Whip:
+  - Enchantment
+  - 90 feet
+  - 1 round
+  - 3d6
+  - psychic
+  - ''
+seventh:
+- Conjure Celestial:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Delayed Blast Fireball:
+  - Evocation
+  - 150 feet
+  - 1 minute
+  - 12d6
+  - fire
+  - ''
+- Divine Word:
+  - Evocation
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Etherealness:
+  - Transmutation
+  - self
+  - 8 hours
+  - ''
+  - force
+  - ''
+- Finger Of Death:
+  - Necromancy
+  - 60 feet
+  - instant
+  - 7d8
+  - necrotic
+  - ''
+- Fire Storm:
+  - Evocation
+  - 150 feet
+  - instant
+  - 7d10
+  - fire
+  - ''
+- Forcecage:
+  - Evocation
+  - 100 feet
+  - 1 hour
+  - ''
+  - ''
+  - ruby dust worth 1,500 gp
+- Mirage Arcane:
+  - Illusion
+  - sight
+  - 10 days
+  - ''
+  - ''
+  - ''
+- Mordenkainen'S Magnificent Mansion:
+  - Conjuration
+  - 300 feet
+  - 24 hours
+  - ''
+  - ''
+  - a miniature portal carved from ivory, a small piece of polished marble, and a
+    tiny silver spoon, each item worth at least 5 gp
+- Mordenkainen'S Sword:
+  - Evocation
+  - 60 feet
+  - 1 minute
+  - 3d10
+  - force
+  - a miniature platinum sword with a grip and pommel of copper and zinc, worth 250
+    gp
+- Plane Shift:
+  - Conjuration
+  - touch
+  - instant
+  - ''
+  - ''
+  - a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence
+- Prismatic Spray:
+  - Evocation
+  - 60 feet
+  - instant
+  - 10d6
+  - acid,cold,fire,lightning,poison
+  - ''
+- Project Image:
+  - Illusion
+  - 500 miles
+  - 1 day
+  - ''
+  - ''
+  - a small replica of you made from materials worth at least 5 gp
+- Regenerate:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Resurrection:
+  - Necromancy
+  - touch
+  - instant
+  - ''
+  - ''
+  - a diamond worth at least 1,000 gp, which the spell consumes
+- Reverse Gravity:
+  - Transmutation
+  - 100 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Sequester:
+  - Transmutation
+  - touch
+  - permanent
+  - ''
+  - ''
+  - a powder composed of diamond, emerald, ruby, and sapphire dust worth at least
+    5,000 gp, which the spell consumes
+- Simulacrum:
+  - Illusion
+  - touch
+  - permanent
+  - ''
+  - ''
+  - snow or ice in quantities sufficient to make a life-size copy of the duplicated
+    creature; some hair, fingernail clippings, or other piece of that creature's body
+    placed inside the snow or ice; and powdered ruby worth 1,500 gp, sprinkled over
+    the duplicate and consumed by the spell
+- Symbol:
+  - Abjuration
+  - touch
+  - permanent
+  - 10d10
+  - necrotic
+  - mercury, phosphorus, and powdered diamond and opal with a total value of at least
+    1,000 gp, which the spell consumes
+- Teleport:
+  - Conjuration
+  - 10 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Draconic Transformation:
+  - Transmutation
+  - self
+  - 1 minute
+  - 6d8
+  - force
+  - a statuette of a dragon, worth at least 500 gp
+- Crown Of Stars:
+  - Evocation
+  - self
+  - 1 hour
+  - 4d12
+  - radiant
+  - ''
+- Power Word Pain:
+  - Enchantment
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Temple Of The Gods:
+  - Conjuration
+  - 120 feet
+  - 24 hours
+  - ''
+  - ''
+  - a holy symbol worth at least 5 gp
+- Whirlwind:
+  - Evocation
+  - 300 feet
+  - 1 minute
+  - 10d6
+  - bludgeoning
+  - ''
+- Dream Of The Blue Veil:
+  - Conjuration
+  - 20 feet
+  - 6 hours
+  - ''
+  - ''
+  - ''
+sixth:
+- Arcane Gate:
+  - Conjuration
+  - 500 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Blade Barrier:
+  - Evocation
+  - 90 feet
+  - 10 minutes
+  - 6d10
+  - slashing
+  - ''
+- Chain Lightning:
+  - Evocation
+  - 150 feet
+  - instant
+  - 10d8
+  - lightning
+  - ''
+- Circle Of Death:
+  - Necromancy
+  - 150 feet
+  - instant
+  - 8d6
+  - necrotic
+  - the powder of a crushed black pearl worth at least 500 gp
+- Conjure Fey:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Contingency:
+  - Evocation
+  - self
+  - 10 days
+  - ''
+  - ''
+  - a statuette of yourself carved from ivory and decorated with gems worth at least
+    1,500 gp
+- Create Undead:
+  - Necromancy
+  - 10 feet
+  - instant
+  - ''
+  - ''
+  - one clay pot filled with grave dirt, one clay pot filled with brackish water,
+    and one 150 gp black onyx stone for each corpse
+- Disintegrate:
+  - Transmutation
+  - 60 feet
+  - instant
+  - 10d6
+  - force
+  - ''
+- Drawmij'S Instant Summons:
+  - Conjuration
+  - touch
+  - permanent
+  - ''
+  - ''
+  - a sapphire worth 1,000 gp
+- Eyebite:
+  - Necromancy
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Find The Path:
+  - Divination
+  - self
+  - 1 day
+  - ''
+  - ''
+  - "a set of divinatory tools\u2014such as bones, ivory sticks, cards, teeth, or\
+    \ carved runes\u2014worth 100 gp and an object from the location you wish to find"
+- Flesh To Stone:
+  - Transmutation
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Forbiddance:
+  - Abjuration
+  - touch
+  - 1 day
+  - 5d10
+  - necrotic,radiant
+  - a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000
+    gp
+- Globe Of Invulnerability:
+  - Abjuration
+  - 10 feet
+  - 1 minute
+  - ''
+  - ''
+  - a glass or crystal bead that shatters when the spell ends
+- Guards And Wards:
+  - Abjuration
+  - touch
+  - 24 hours
+  - ''
+  - ''
+  - burning incense, a small measure of brimstone and oil, a knotted string, a small
+    amount of umber hulk blood, and a small silver rod worth at least 10 gp
+- Harm:
+  - Necromancy
+  - 60 feet
+  - instant
+  - 14d6
+  - necrotic
+  - ''
+- Heal:
+  - Evocation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Heroes' Feast:
+  - Conjuration
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - a gem-encrusted bowl worth at least 1,000 gp, which the spell consumes
+- Magic Jar:
+  - Necromancy
+  - self
+  - permanent
+  - ''
+  - ''
+  - a gem, crystal, reliquary, or some other ornamental container worth at least 500
+    gp
+- Mass Suggestion:
+  - Enchantment
+  - 60 feet
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Move Earth:
+  - Transmutation
+  - 120 feet
+  - 2 hours
+  - ''
+  - ''
+  - ''
+- Otiluke'S Freezing Sphere:
+  - Evocation
+  - 300 feet
+  - instant
+  - 10d6
+  - cold
+  - ''
+- Otto'S Irresistible Dance:
+  - Enchantment
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Planar Ally:
+  - Conjuration
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Programmed Illusion:
+  - Illusion
+  - 120 feet
+  - permanent
+  - ''
+  - ''
+  - a bit of fleece and jade dust worth at least 25 gp
+- Sunbeam:
+  - Evocation
+  - 60 feet
+  - 1 minute
+  - 6d8
+  - radiant
+  - ''
+- Transport Via Plants:
+  - Conjuration
+  - 10 feet
+  - 1 round
+  - ''
+  - ''
+  - ''
+- True Seeing:
+  - Divination
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - an ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron,
+    and fat; and is consumed by the spell
+- Wall Of Ice:
+  - Evocation
+  - 120 feet
+  - 10 minutes
+  - 10d6
+  - cold
+  - ''
+- Wall Of Thorns:
+  - Conjuration
+  - 120 feet
+  - 10 minutes
+  - 7d8
+  - piercing,slashing
+  - ''
+- Wind Walk:
+  - Transmutation
+  - 30 feet
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Word Of Recall:
+  - Conjuration
+  - 5 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Fizban'S Platinum Shield:
+  - Abjuration
+  - 60 feet
+  - 1 minute
+  - ''
+  - ''
+  - a platinum-plated dragon scale, worth at least 500 gp
+- Bones Of The Earth:
+  - Transmutation
+  - 120 feet
+  - instant
+  - 6d6
+  - bludgeoning
+  - ''
+- Create Homunculus:
+  - Transmutation
+  - touch
+  - instant
+  - ''
+  - ''
+  - clay, ash, and mandrake root, all of which the spell consumes, and a jewel-encrusted
+    dagger worth at least 1,000 gp
+- Druid Grove:
+  - Abjuration
+  - touch
+  - 24 hours
+  - ''
+  - ''
+  - mistletoe, which the spell consumes, that was harvested with a golden sickle under
+    the light of a full moon
+- Investiture Of Flame:
+  - Transmutation
+  - self
+  - 10 minutes
+  - 1d10
+  - fire
+  - ''
+- Investiture Of Ice:
+  - Transmutation
+  - self
+  - 10 minutes
+  - 4d6
+  - cold
+  - ''
+- Investiture Of Stone:
+  - Transmutation
+  - self
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Investiture Of Wind:
+  - Transmutation
+  - self
+  - 10 minutes
+  - 2d10
+  - bludgeoning
+  - ''
+- Mental Prison:
+  - Illusion
+  - 60 feet
+  - 1 minute
+  - 5d10
+  - psychic
+  - ''
+- Primordial Ward:
+  - Abjuration
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Scatter:
+  - Conjuration
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Soul Cage:
+  - Necromancy
+  - 60 feet
+  - 8 hours
+  - ''
+  - ''
+  - a tiny silver cage worth 100 gp
+- Tenser'S Transformation:
+  - Transmutation
+  - self
+  - 10 minutes
+  - 2d12
+  - force
+  - ''
+- Summon Fiend:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - humanoid blood inside a ruby vial worth at least 600 gp
+- Tasha'S Otherworldly Guise:
+  - Transmutation
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - an object engraved with a symbol of the Outer Planes, worth at least 500 gp
+third:
+- Animate Dead:
+  - Necromancy
+  - 10 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Aura Of Vitality:
+  - Evocation
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Beacon Of Hope:
+  - Abjuration
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Bestow Curse:
+  - Necromancy
+  - touch
+  - 1 minute
+  - 1d8
+  - necrotic
+  - ''
+- Blinding Smite:
+  - Evocation
+  - self
+  - 1 minute
+  - 3d8
+  - radiant
+  - ''
+- Blink:
+  - Transmutation
+  - self
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Call Lightning:
+  - Conjuration
+  - 120 feet
+  - 10 minutes
+  - 3d10
+  - lightning
+  - ''
+- Clairvoyance:
+  - Divination
+  - 1 miles
+  - 10 minutes
+  - ''
+  - ''
+  - a focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye
+    for seeing
+- Conjure Animals:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Conjure Barrage:
+  - Conjuration
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Counterspell:
+  - Abjuration
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Create Food And Water:
+  - Conjuration
+  - 30 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Crusader'S Mantle:
+  - Evocation
+  - 30 feet
+  - 1 minute
+  - 1d4
+  - radiant
+  - ''
+- Daylight:
+  - Evocation
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Dispel Magic:
+  - Abjuration
+  - 120 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Elemental Weapon:
+  - Transmutation
+  - touch
+  - 1 hour
+  - 1d4
+  - acid,cold,fire,lightning,thunder
+  - ''
+- Fear:
+  - Illusion
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Feign Death:
+  - Necromancy
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Fireball:
+  - Evocation
+  - 150 feet
+  - instant
+  - 8d6
+  - fire
+  - ''
+- Fly:
+  - Transmutation
+  - touch
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Gaseous Form:
+  - Transmutation
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Glyph Of Warding:
+  - Abjuration
+  - touch
+  - permanent
+  - 5d8
+  - acid,cold,fire,lightning,thunder
+  - incense and powdered diamond worth at least 200 gp, which the spell consumes
+- Haste:
+  - Transmutation
+  - 30 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Hunger Of Hadar:
+  - Conjuration
+  - 150 feet
+  - 1 minute
+  - 2d6
+  - acid,cold
+  - ''
+- Hypnotic Pattern:
+  - Illusion
+  - 120 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Leomund'S Tiny Hut:
+  - Evocation
+  - 10 feet
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Lightning Arrow:
+  - Transmutation
+  - self
+  - 1 minute
+  - 4d8
+  - lightning
+  - ''
+- Lightning Bolt:
+  - Evocation
+  - 100 feet
+  - instant
+  - 8d6
+  - lightning
+  - ''
+- Magic Circle:
+  - Abjuration
+  - 10 feet
+  - 1 hour
+  - ''
+  - ''
+  - holy water or powdered silver and iron worth at least 100 gp, which the spell
+    consumes
+- Major Image:
+  - Illusion
+  - 120 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Mass Healing Word:
+  - Evocation
+  - 60 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Meld Into Stone:
+  - Transmutation
+  - touch
+  - 8 hours
+  - 6d6
+  - bludgeoning
+  - ''
+- Nondetection:
+  - Abjuration
+  - touch
+  - 8 hours
+  - ''
+  - ''
+  - a pinch of diamond dust worth 25 gp sprinkled over the target, which the spell
+    consumes
+- Phantom Steed:
+  - Illusion
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Plant Growth:
+  - Transmutation
+  - 150 feet
+  - instant
+  - ''
+  - ''
+  - ''
+- Protection From Energy:
+  - Abjuration
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Remove Curse:
+  - Abjuration
+  - touch
+  - instant
+  - ''
+  - ''
+  - ''
+- Revivify:
+  - Necromancy
+  - touch
+  - instant
+  - ''
+  - ''
+  - diamonds worth 300 gp, which the spell consumes
+- Sending:
+  - Evocation
+  - unlimited
+  - 1 round
+  - ''
+  - ''
+  - ''
+- Sleet Storm:
+  - Conjuration
+  - 150 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Slow:
+  - Transmutation
+  - 120 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Speak With Dead:
+  - Necromancy
+  - 10 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Speak With Plants:
+  - Transmutation
+  - 30 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Spirit Guardians:
+  - Conjuration
+  - 15 feet
+  - 10 minutes
+  - 3d8
+  - necrotic,radiant
+  - ''
+- Stinking Cloud:
+  - Conjuration
+  - 90 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Tongues:
+  - Divination
+  - touch
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Vampiric Touch:
+  - Necromancy
+  - self
+  - 1 minute
+  - 3d6
+  - necrotic
+  - ''
+- Water Breathing:
+  - Transmutation
+  - 30 feet
+  - 24 hours
+  - ''
+  - ''
+  - ''
+- Water Walk:
+  - Transmutation
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Wind Wall:
+  - Evocation
+  - 120 feet
+  - 1 minute
+  - 3d8
+  - bludgeoning
+  - ''
+- Ashardalon'S Stride:
+  - Transmutation
+  - self
+  - 1 minute
+  - 1d6
+  - fire
+  - ''
+- Catnap:
+  - Enchantment
+  - 30 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Enemies Abound:
+  - Enchantment
+  - 120 feet
+  - 1 minute
+  - ''
+  - ''
+  - ''
+- Erupting Earth:
+  - Transmutation
+  - 120 feet
+  - instant
+  - 3d12
+  - bludgeoning
+  - ''
+- Flame Arrows:
+  - Transmutation
+  - touch
+  - 1 hour
+  - 1d6
+  - fire
+  - ''
+- Life Transference:
+  - Necromancy
+  - 30 feet
+  - instant
+  - 4d8
+  - necrotic
+  - ''
+- Melf'S Minute Meteors:
+  - Evocation
+  - self
+  - 10 minutes
+  - 2d6
+  - fire
+  - ''
+- Summon Lesser Demons:
+  - Conjuration
+  - 60 feet
+  - 1 hour
+  - ''
+  - ''
+  - a vial of blood from a humanoid killed within the past 24 hours
+- Thunder Step:
+  - Conjuration
+  - 90 feet
+  - instant
+  - 3d10
+  - thunder
+  - ''
+- Tidal Wave:
+  - Conjuration
+  - 120 feet
+  - instant
+  - 4d8
+  - bludgeoning
+  - ''
+- Tiny Servant:
+  - Transmutation
+  - touch
+  - 8 hours
+  - ''
+  - ''
+  - ''
+- Wall Of Sand:
+  - Evocation
+  - 90 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Wall Of Water:
+  - Evocation
+  - 60 feet
+  - 10 minutes
+  - ''
+  - ''
+  - ''
+- Intellect Fortress:
+  - Abjuration
+  - 30 feet
+  - 1 hour
+  - ''
+  - ''
+  - ''
+- Spirit Shroud:
+  - Necromancy
+  - self
+  - 1 minute
+  - 1d8
+  - radiant,necrotic,cold
+  - ''
+- Summon Fey:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - a gilded flower worth at least 300 gp
+- Summon Shadowspawn:
+  - Conjuration
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - tears inside a gem worth at least 300 gp
+- Summon Undead:
+  - Necromancy
+  - 90 feet
+  - 1 hour
+  - ''
+  - ''
+  - a gilded skull worth at least 300 gp
+
